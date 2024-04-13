@@ -1,0 +1,113 @@
+<!DOCTYPE html><html lang=es data-theme=solarized-dark><head><base href=https://elartedelcodigo.github.io/ ><title>Guías y tutoriales - Winston Logger</title><meta http-equiv=content-type content="text/html; charset=UTF-8"><meta http-equiv=X-UA-Compatible content=IE=edge><meta name=viewport content="width=device-width, initial-scale=1, maximum-scale=1"><meta name=theme-color content=#1c1c1c><meta name=description content="Ejemplo práctico para crear ficheros de logs con Winston para proyectos basados en Node."><meta name=keywords content=example,winston,logger,log><meta name=author content=Admin><meta property=og:title content="Winston Logger"><meta property=og:description content="Ejemplo práctico para crear ficheros de logs con Winston para proyectos basados en Node."><meta property=og:image content=https://elartedelcodigo.github.io/static/assets/img/logo.png><meta property=og:url content=https://elartedelcodigo.github.io/node/winston-logger><meta property=og:site_name content="Guías y tutoriales"><meta property=twitter:title content="Winston Logger"><meta property=twitter:description content="Ejemplo práctico para crear ficheros de logs con Winston para proyectos basados en Node."><meta property=twitter:image content=https://elartedelcodigo.github.io/static/assets/img/logo.png><meta property=twitter:card content=summary><link rel=icon type=image/png sizes=32x32 href=./static/assets/favicon_32x32.png><link rel=icon type=image/png sizes=192x192 href=./static/assets/favicon_192x192.png><link rel=canonical href=https://elartedelcodigo.github.io/node/winston-logger><link rel=alternate hreflang=en href=https://elartedelcodigo.github.io/en/node/winston-logger><link rel=alternate hreflang=es href=https://elartedelcodigo.github.io/node/winston-logger><link rel=alternate hreflang=x-default href=https://elartedelcodigo.github.io/node/winston-logger><script>!function(){const t=document.getElementsByTagName("html")[0],e=window.localStorage.getItem("theme");e&&t.setAttribute("data-theme",e);const n=window.localStorage.getItem("lang");n&&n!==t.getAttribute("lang")&&(location.href=document.querySelector(`link[hreflang="${n}"]`).href)}();</script><style>@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400&display=swap');</style><link rel=stylesheet href=./static/resource-9d6539d5.css></head><body><div class=_app-root><header class=_header><div class=_header-content><div class=app-header><ul class=left><li><a class="btn menu-item" href=./ ><span class="icon icon-dark icon-home-solid"></span> Inicio</a></li><li><a class="btn menu-item" href=./search><span class="icon icon-dark icon-bolt-solid"></span> Ver todos</a></li><li><a class="btn menu-item d-none d-xl-block" href=./bash>Bash</a></li><li><a class="btn menu-item d-none d-xl-block" href=./docker>Docker</a></li><li><a class="btn menu-item d-none d-xl-block" href=./git>Git</a></li><li><a class="btn menu-item d-none d-xl-block" href=./markdown>Markdown</a></li><li><a class="btn menu-item d-none d-xl-block" href=./nginx>Nginx</a></li><li><a class="btn menu-item d-none d-xl-block" href=./node>Node</a></li><li><a class="btn menu-item d-none d-xl-block" href=./postgres>Postgres</a></li><li><a class="btn menu-item d-none d-xl-block" href=./ssh>SSH</a></li><li><a class="btn menu-item d-none d-xl-block" href=./utilitarios>Utilitarios</a></li></ul><ul class=right><li class="d-none d-sm-flex align-items-center"><form id=search-form class=d-flex data-url=./search><span class="icon icon-dark icon-search-solid"></span><input id=search-form-q type=text placeholder=Buscar></form></li><li><div id=switch-theme-button class="btn menu-item" title="Cambiar tema"><span class="icon icon-dark icon-adjust-solid"></span></div></li><li><div id=switch-language-button class="btn menu-item" data-es-title="Muestra la versión en Inglés" data-en-title="Muestra la versión en Español">En</div></li></ul></div></div></header><article class=_body><div class=_body-content><div class=body-content><div class="container v2"><div class=row><div class="col-xl-2 d-none d-xl-block"><div class="sidenav-container sticky-top"><div id=sidenav><ul><li><a class=sidenav-item section-link=proyecto>Proyecto</a></li><li><a class=sidenav-item section-link=resultado>Resultado</a></li><li><a class=sidenav-item section-link=como-sucedio>¿Cómo sucedió?</a></li><li><a class=sidenav-item section-link=fn-constructor>[Fn] constructor</a></li><li><a class=sidenav-item section-link=fn-createtransports>[Fn] _createTransports</a></li><li><a class=sidenav-item section-link=fn-consoleformat>[Fn] _consoleFormat</a></li><li><a class=sidenav-item section-link=fn-fileformat>[Fn] _fileFormat</a></li><li><a class=sidenav-item section-link=niveles-de-logs>Niveles de logs</a></li><li><a class=sidenav-item section-link=referencias>Referencias</a></li></ul></div></div></div><div class=col-xl-8><div class="container py-md-5 py-sm-3 py-0"><div class=row><div class="col text-center"><p class="mt-3 mb-0"><a class=category-link href=./node title=Categoría>#node</a></p></div></div><div class=row><div id=mark class=col><div xmlns=http://www.w3.org/1999/xhtml><h1>Winston Logger</h1><p>Ejemplo práctico para crear ficheros de logs con <a href=https://github.com/winstonjs/winston>Winston</a> para proyectos basados en Node.</p><h2 id=proyecto class=section>Proyecto</h2><ol><li><p>Descarga el repositorio.</p><pre class="language-bash cmd"><code>git clone https://github.com/AlexQuispe/winston-logger-example.git
+</code></pre></li><li><p>Ingresa a la carpeta del proyecto.</p><pre class="language-bash cmd"><code>cd winston-logger-example
+</code></pre></li><li><p>Instala las dependencias.</p><pre class="language-bash cmd"><code>npm install
+</code></pre></li><li><p>Ejecuta el script.</p><pre class="language-bash cmd"><code>node index.js
+</code></pre><pre class=cmd-output><code>30/04/2020 22:02:27 [info] Mensaje informativo
+30/04/2020 22:02:27 [warn] Mensaje de advertencia
+30/04/2020 22:02:27 [error] Mensaje de error
+30/04/2020 22:02:27 [info] Mensaje con datos { user: 'John Smith' }
+</code></pre></li></ol><h2 id=resultado class=section>Resultado</h2><p>Antes de ejecutar el script.</p><pre class=language-bash><code>app
+  ├─ logger.js
+  └─ index.js
+</code></pre><p>Después de ejecutar el script.</p><pre class=language-bash><code>app
+  ├─ logs
+  │     ├─ info.log
+  │     ├─ warn.log
+  │     └─ error.log
+  ├─ logger.js
+  └─ index.js
+</code></pre><p>Y se habrán creado los siguientes fichero de logs:</p><p class=pre-title>logs/info.log</p><pre class="language-json line-numbers" data-title=logs/info.log><code>{"timestamp":"30/04/2020 22:02:27","level":"info","message":"Mensaje informativo","data":null}
+{"timestamp":"30/04/2020 22:02:27","level":"warn","message":"Mensaje de advertencia","data":null}
+{"timestamp":"30/04/2020 22:02:27","level":"error","message":"Mensaje de error","data":null}
+{"timestamp":"30/04/2020 22:02:27","level":"info","message":"Mensaje con datos","data":"{ user: 'John Smith' }"}
+</code></pre><p class=pre-title>logs/warn.log</p><pre class="language-json line-numbers" data-title=logs/warn.log><code>{"timestamp":"30/04/2020 22:02:27","level":"warn","message":"Mensaje de advertencia","data":null}
+{"timestamp":"30/04/2020 22:02:27","level":"error","message":"Mensaje de error","data":null}
+</code></pre><p class=pre-title>logs/error.log</p><pre class="language-json line-numbers" data-title=logs/error.log><code>{"timestamp":"30/04/2020 22:02:27","level":"error","message":"Mensaje de error","data":null}
+</code></pre><h2 id=como-sucedio class=section>¿Cómo sucedió?</h2><p class=pre-title>index.js</p><pre class="language-js line-numbers" data-title=index.js><code>const Logger = require('./logger')
+
+const logger = new Logger()
+
+logger.info('Mensaje informativo')
+logger.warn('Mensaje de advertencia')
+logger.error('Mensaje de error')
+logger.info('Mensaje con datos', { user: 'John Smith' })
+</code></pre><p class=pre-title>logger.js</p><pre class="language-js line-numbers" data-title=logger.js><code>const util    = require('util')
+const moment  = require('moment')
+const winston = require('winston')
+
+class Logger {
+  constructor() { this.winstonLogger = winston.createLogger({ ... }) }
+
+  info(message, data) { this.winstonLogger.info({ message, data }) }
+  warn(message, data) { this.winstonLogger.warn({ message, data }) }
+  error(message, data) { this.winstonLogger.error({ message, data }) }
+
+  _createTransports() { ... }
+  _consoleFormat () { ... }
+  _fileFormat() { ... }
+}
+
+module.exports = Logger
+</code></pre><h3 class="display-4 section" id=fn-constructor>[Fn] constructor</h3><p>Crea una instancia de winstonLogger.</p><pre class=language-js><code>constructor() {
+  this.winstonLogger = winston.createLogger({
+    levels      : { error: 1, warn: 2, info: 3 },
+    transports  : this._createTransports(),
+    exitOnError : false,
+  })
+}
+</code></pre><h3 class="display-4 section" id=fn-createtransports>[Fn] _createTransports</h3><p>Configura los tipos de logs a generar.</p><pre class=language-js><code>_createTransports() {
+  const TRANSPORTS = []
+  TRANSPORTS.push(new winston.transports.Console({
+    format           : winston.format.printf(this._consoleFormat()),
+    level            : 'info', // Muestra logs de nivel 3 o menor
+    handleExceptions : false,
+    colorize         : false,
+    json             : false,
+  }))
+  Array.from(['info', 'warn', 'error']).forEach(level => {
+    TRANSPORTS.push(new winston.transports.File({
+      format           : winston.format.printf(this._fileFormat()),
+      level            : level,
+      handleExceptions : false,
+      colorize         : false,
+      json             : true,
+      filename         : `logs/${level}.log`,
+      maxsize          : 5242880, // 5242880 Bytes = 5 MB
+      maxFiles         : 5,
+    }))
+  })
+  return TRANSPORTS
+}
+</code></pre><h3 class="display-4 section" id=fn-consoleformat>[Fn] _consoleFormat</h3><p>Describe el formato de salida para la consola.</p><pre class=language-js><code>_consoleFormat () {
+  const COLORS = {
+    error : `\x1b[91m`, // LIGHT_RED
+    warn  : `\x1b[93m`, // LIGHT_YELLOW
+    info  : `\x1b[96m`, // LIGHT_CYAN
+    reset : `\x1b[0m`,  // Restaura al color por defecto
+  }
+  return (info) => {
+    const START     = COLORS[info.level]
+    const END       = COLORS.reset
+    const TIMESTAMP = moment().format('DD/MM/YYYY HH:mm:ss')
+    const LEVEL     = info.level
+    const MESSAGE   = info.message
+    const DATA      = info.data ? util.inspect(info.data, false, null) : ''
+    return `${START} ${TIMESTAMP} [${LEVEL}] ${MESSAGE} ${DATA} ${END}`
+  }
+}
+</code></pre><h3 class="display-4 section" id=fn-fileformat>[Fn] _fileFormat</h3><p>Describe el formato de salida para los ficheros de logs.</p><pre class=language-js><code>_fileFormat() {
+  return (info)  => {
+    const TIMESTAMP = moment().format('DD/MM/YYYY HH:mm:ss')
+    const LEVEL     = info.level
+    const MESSAGE   = info.message
+    const DATA      = info.data ? util.inspect(info.data, false, null) : null
+    return JSON.stringify({
+      timestamp : TIMESTAMP,
+      level     : LEVEL,
+      message   : MESSAGE,
+      data      : DATA,
+    })
+  }
+}
+</code></pre><h2 id=niveles-de-logs class=section>Niveles de logs</h2><p>Según la especificación <a href=https://tools.ietf.org/html/rfc5424>RFC5424</a> (sobre la que se basa la librería winston) los niveles de logs se identifican numéricamente en orden ascendente desde el más importante hasta el menos importante.</p><p>Por ejemplo:</p><div class=table-container><table data-theme=dark><thead><tr><th>Tipo de error</th><th>Nivel</th><th>Descripción</th><th>Color (opcional)</th></tr></thead><tbody><tr><td><code style=color:#ff0000>fatal</code></td><td style=color:#ff0000>0</td><td style=color:#ff0000>Mensajes críticos</td><td><code style=color:#ff0000>\x1b[31m</code> <code style=color:#ff0000>RED</code></td></tr><tr><td><code style=color:#ff7e7e>error</code></td><td style=color:#ff7e7e>1</td><td style=color:#ff7e7e>Mensajes de error</td><td><code style=color:#ff7e7e>\x1b[91m</code> <code style=color:#ff7e7e>LIGHT_RED</code></td></tr><tr><td><code style=color:#ffff7e>warn</code></td><td style=color:#ffff7e>2</td><td style=color:#ffff7e>Mensajes de advertencia</td><td><code style=color:#ffff7e>\x1b[93m</code> <code style=color:#ffff7e>LIGHT_YELLOW</code></td></tr><tr><td><code style=color:#7eff43>notice</code></td><td style=color:#7eff43>3</td><td style=color:#7eff43>Mensajes importantes</td><td><code style=color:#7eff43>\x1b[92m</code> <code style=color:#7eff43>LIGHT_GREEN</code></td></tr><tr><td><code style=color:#eeeeee>info</code></td><td style=color:#eeeeee>4</td><td style=color:#eeeeee>Mensajes informativos</td><td><code style=color:#eeeeee>\x1b[97m</code> <code style=color:#eeeeee>LIGHT_WHITE</code></td></tr><tr><td><code style=color:#7effff>verbose</code></td><td style=color:#7effff>5</td><td style=color:#7effff>Mensajes detallados</td><td><code style=color:#7effff>\x1b[96m</code> <code style=color:#7effff>LIGHT_CYAN</code></td></tr><tr><td><code style=color:#7e7eff>debug</code></td><td style=color:#7e7eff>6</td><td style=color:#7e7eff>Mensajes para el depurador</td><td><code style=color:#7e7eff>\x1b[94m</code> <code style=color:#7e7eff>LIGHT_BLUE</code></td></tr><tr><td><code style=color:#ff7eff>silly</code></td><td style=color:#ff7eff>7</td><td style=color:#ff7eff>Mensajes sin importancia</td><td><code style=color:#ff7eff>\x1b[95m</code> <code style=color:#ff7eff>LIGHT_MAGENTA</code></td></tr></tbody></table></div><p>Puede obtener una referencia completa de los colores en el sitio: <a href=https://github.com/shiena/ansicolor>https://github.com/shiena/ansicolor</a>.</p><h2 id=referencias class=section>Referencias</h2><ul><li><p><a href=https://github.com/winstonjs/winston>winston - A logger for just about everything</a></p></li><li><p><a href=https://github.com/shiena/ansicolor>ansicolor - Ansicolor library</a></p></li></ul></div></div></div><div class="row pt-5"><div class="col-12 py-5 text-right"><div class=tags-text><p><span class="icon icon-tags-solid" title=Etiquetas></span>&nbsp; <a href=./search?q=example>example</a>&nbsp;<a href=./search?q=winston>winston</a>&nbsp;<a href=./search?q=logger>logger</a>&nbsp;<a href=./search?q=log>log</a>&nbsp;</p></div></div><div class="col-12 py-1 text-left"><div class=published-text><p>Publicado: 26 de mayo de 2020</p></div></div></div></div></div></div></div><div id=to-top><div class=to-top-icon></div></div></div></div></article><footer class=_footer><div class=_footer-content><div class=app-footer><div class="container h-100"><div class="row d-flex align-items-center h-100"><div class="col text-center">El código se encuentra disponible bajo la licencia <a href=https://oss.ninja/mit target=_blank title="Licencia de software">MIT</a>, a menos que se indique lo contrario. <br><div class=copy>© 2024 <a href=https://github.com/ElArteDelCodigo title=https://github.com/ElArteDelCodigo>El arte del código</a> - Desarrollado con <a href=https://markojs.com target=_blank title=https://markojs.com>Marko JS</a></div><a href=https://elartedelcodigo.com/terms title=terms>Condiciones del Servicio</a> - <a href=https://elartedelcodigo.com/privacy title=privacy>Política de Privacidad</a></div></div></div></div></div></footer></div><script src=./static/resource-ec3908b4.js></script>
+<script>$_mod.ready();</script></body></html>

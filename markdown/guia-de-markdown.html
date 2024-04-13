@@ -1,0 +1,230 @@
+<!DOCTYPE html><html lang=es data-theme=solarized-dark><head><base href=https://elartedelcodigo.github.io/ ><title>Guías y tutoriales - Guía de Markdown</title><meta http-equiv=content-type content="text/html; charset=UTF-8"><meta http-equiv=X-UA-Compatible content=IE=edge><meta name=viewport content="width=device-width, initial-scale=1, maximum-scale=1"><meta name=theme-color content=#1c1c1c><meta name=description content="Guía para crear contenido HTML a partir de ficheros Markdown."><meta name=keywords content=guide,md><meta name=author content=Admin><meta property=og:title content="Guía de Markdown"><meta property=og:description content="Guía para crear contenido HTML a partir de ficheros Markdown."><meta property=og:image content=https://elartedelcodigo.github.io/static/assets/img/logo.png><meta property=og:url content=https://elartedelcodigo.github.io/markdown/guia-de-markdown><meta property=og:site_name content="Guías y tutoriales"><meta property=twitter:title content="Guía de Markdown"><meta property=twitter:description content="Guía para crear contenido HTML a partir de ficheros Markdown."><meta property=twitter:image content=https://elartedelcodigo.github.io/static/assets/img/logo.png><meta property=twitter:card content=summary><link rel=icon type=image/png sizes=32x32 href=./static/assets/favicon_32x32.png><link rel=icon type=image/png sizes=192x192 href=./static/assets/favicon_192x192.png><link rel=canonical href=https://elartedelcodigo.github.io/markdown/guia-de-markdown><link rel=alternate hreflang=en href=https://elartedelcodigo.github.io/en/markdown/guia-de-markdown><link rel=alternate hreflang=es href=https://elartedelcodigo.github.io/markdown/guia-de-markdown><link rel=alternate hreflang=x-default href=https://elartedelcodigo.github.io/markdown/guia-de-markdown><script>!function(){const t=document.getElementsByTagName("html")[0],e=window.localStorage.getItem("theme");e&&t.setAttribute("data-theme",e);const n=window.localStorage.getItem("lang");n&&n!==t.getAttribute("lang")&&(location.href=document.querySelector(`link[hreflang="${n}"]`).href)}();</script><style>@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400&display=swap');</style><link rel=stylesheet href=./static/resource-9d6539d5.css></head><body><div class=_app-root><header class=_header><div class=_header-content><div class=app-header><ul class=left><li><a class="btn menu-item" href=./ ><span class="icon icon-dark icon-home-solid"></span> Inicio</a></li><li><a class="btn menu-item" href=./search><span class="icon icon-dark icon-bolt-solid"></span> Ver todos</a></li><li><a class="btn menu-item d-none d-xl-block" href=./bash>Bash</a></li><li><a class="btn menu-item d-none d-xl-block" href=./docker>Docker</a></li><li><a class="btn menu-item d-none d-xl-block" href=./git>Git</a></li><li><a class="btn menu-item d-none d-xl-block" href=./markdown>Markdown</a></li><li><a class="btn menu-item d-none d-xl-block" href=./nginx>Nginx</a></li><li><a class="btn menu-item d-none d-xl-block" href=./node>Node</a></li><li><a class="btn menu-item d-none d-xl-block" href=./postgres>Postgres</a></li><li><a class="btn menu-item d-none d-xl-block" href=./ssh>SSH</a></li><li><a class="btn menu-item d-none d-xl-block" href=./utilitarios>Utilitarios</a></li></ul><ul class=right><li class="d-none d-sm-flex align-items-center"><form id=search-form class=d-flex data-url=./search><span class="icon icon-dark icon-search-solid"></span><input id=search-form-q type=text placeholder=Buscar></form></li><li><div id=switch-theme-button class="btn menu-item" title="Cambiar tema"><span class="icon icon-dark icon-adjust-solid"></span></div></li><li><div id=switch-language-button class="btn menu-item" data-es-title="Muestra la versión en Inglés" data-en-title="Muestra la versión en Español">En</div></li></ul></div></div></header><article class=_body><div class=_body-content><div class=body-content><div class="container v2"><div class=row><div class="col-xl-2 d-none d-xl-block"><div class="sidenav-container sticky-top"><div id=sidenav><ul><li><a class=sidenav-item section-link=1-encabezados>1. Encabezados</a></li><li><a class=sidenav-item section-link=2-parrafos>2. Párrafos</a></li><li><a class=sidenav-item section-link=3-enfasis>3. Énfasis</a></li><li><a class=sidenav-item section-link=4-bloques-de-texto>4. Bloques de texto</a></li><li><a class=sidenav-item section-link=5-listas>5. Listas</a></li><li><a class=sidenav-item section-link=6-codigo>6. Código</a></li><li><a class=sidenav-item section-link=7-lineas-horizontales>7. Líneas horizontales</a></li><li><a class=sidenav-item section-link=8-enlaces>8. Enlaces</a></li><li><a class=sidenav-item section-link=9-imagenes>9. Imágenes</a></li><li><a class=sidenav-item section-link=10-tablas>10. Tablas</a></li><li><a class=sidenav-item section-link=referencias>Referencias</a></li></ul></div></div></div><div class=col-xl-8><div class="container py-md-5 py-sm-3 py-0"><div class=row><div class="col text-center"><p class="mt-3 mb-0"><a class=category-link href=./markdown title=Categoría>#markdown</a></p></div></div><div class=row><div id=mark class=col><div xmlns=http://www.w3.org/1999/xhtml><h1>Guía de Markdown</h1><p>Guía para crear contenido <a href=https://developer.mozilla.org/es/docs/Web/HTML title="Lenguaje de Marcado de Hipertextos">HTML</a> a partir de ficheros <a href=https://markdown.es title="Herramienta de conversión de texto plano a HTML">Markdown</a>.</p><h2 id=1-encabezados class=section>1. Encabezados</h2><p class=pre-title>example.md</p><pre class="language-md line-numbers" data-title=example.md><code># Encabezado de nivel 1
+## Encabezado de nivel 2
+### Encabezado de nivel 3
+#### Encabezado de nivel 4
+##### Encabezado de nivel 5
+###### Encabezado de nivel 6
+</code></pre><p class=h1>Encabezado de nivel 1</p><p class=h2>Encabezado de nivel 2</p><p class=h3>Encabezado de nivel 3</p><p class=h4>Encabezado de nivel 4</p><p class=h5>Encabezado de nivel 5</p><p class=h6>Encabezado de nivel 6</p><p class=pre-title>example.md</p><pre class="language-md line-numbers" data-title=example.md><code>Display heading 1 {.display-1}
+
+Display heading 2 {.display-2}
+
+Display heading 3 {.display-3}
+
+Display heading 4 {.display-4}
+</code></pre><p class=display-1>Display heading 1</p><p class=display-2>Display heading 2</p><p class=display-3>Display heading 3</p><p class=display-4>Display heading 4</p><h2 id=2-parrafos class=section>2. Párrafos</h2><p class=pre-title>example.md</p><pre class="language-md line-numbers" data-title=example.md><code>Realmente me gusta usar Markdown.
+
+Creo que lo usaré para formatear
+todos mis documentos de ahora en adelante.
+</code></pre><p>Realmente me gusta usar Markdown.</p><p>Creo que lo usaré para formatear todos mis documentos de ahora en adelante.</p><p class=pre-title>example.md</p><pre class="language-md line-numbers" data-title=example.md><code>Realmente me gusta usar Markdown.
+
+Creo que lo usaré para formatear \
+todos mis documentos de ahora en adelante.
+</code></pre><p>Realmente me gusta usar Markdown.</p><p>Creo que lo usaré para formatear <br> todos mis documentos de ahora en adelante.</p><p class=pre-title>example.md</p><pre class="language-md line-numbers" data-title=example.md><code>Estoy al centro. {.text-center}
+</code></pre><p class=text-center>Estoy al centro.</p><p class=pre-title>example.md</p><pre class="language-md line-numbers" data-title=example.md><code>"Solo es joven aquél que sigue aprendiendo." {.text-right}
+
+JULIAN ZINI {.text-right}
+</code></pre><p class=text-right>"Solo es joven aquél que sigue aprendiendo."</p><p class=text-right>JULIAN ZINI</p><h2 id=3-enfasis class=section>3. Énfasis</h2><p class=pre-title>example.md</p><pre class="language-md line-numbers" data-title=example.md><code>Este es un **texto en negrita**.
+</code></pre><p>Este es un <strong>texto en negrita</strong>.</p><p class=pre-title>example.md</p><pre class="language-md line-numbers" data-title=example.md><code>Este es un *texto en cursiva*.
+</code></pre><p>Este es un <em>texto en cursiva</em>.</p><p class=pre-title>example.md</p><pre class="language-md line-numbers" data-title=example.md><code>Este es un texto ***muy importante***.
+</code></pre><p>Este es un texto <em><strong>muy importante</strong></em>.</p><p class=pre-title>example.md</p><pre class="language-md line-numbers" data-title=example.md><code>Este es un ~~Texto subrayado~~.
+</code></pre><p>Este es un <s>Texto subrayado</s>.</p><p class=pre-title>example.md</p><pre class="language-md line-numbers" data-title=example.md><code>Este es un `fragmento de código`.
+</code></pre><p>Este es un <code>fragmento de código</code>.</p><h2 id=4-bloques-de-texto class=section>4. Bloques de texto</h2><p class=pre-title>example.md</p><pre class="language-md line-numbers" data-title=example.md><code>> Dorothy la siguió por muchas habitaciones preciosas de su castillo.
+</code></pre><blockquote><p>Dorothy la siguió por muchas habitaciones preciosas de su castillo.</p></blockquote><p class=pre-title>example.md</p><pre class="language-md line-numbers" data-title=example.md><code>> Dorothy la siguió por muchas habitaciones preciosas de su castillo.
+>
+> La Bruja le ordenó que limpiara las ollas y teteras, que barriera el suelo
+> y mantuviera el fuego alimentado con madera.
+</code></pre><blockquote><p>Dorothy la siguió por muchas habitaciones preciosas de su castillo.</p><p>La Bruja le ordenó que limpiara las ollas y teteras, que barriera el suelo y mantuviera el fuego alimentado con madera.</p></blockquote><p class=pre-title>example.md</p><pre class="language-md line-numbers" data-title=example.md><code>> Dorothy la siguió por muchas habitaciones preciosas de su castillo.
+>
+>> La Bruja le ordenó que limpiara las ollas y teteras, que barriera el suelo
+>> y mantuviera el fuego alimentado con madera.
+</code></pre><blockquote><p>Dorothy la siguió por muchas habitaciones preciosas de su castillo.</p><blockquote><p>La Bruja le ordenó que limpiara las ollas y teteras, que barriera el suelo y mantuviera el fuego alimentado con madera.</p></blockquote></blockquote><p class=pre-title>example.md</p><pre class="language-md line-numbers" data-title=example.md><code>> ### ¡Los resultados trimestrales se ven geniales!
+>
+> - Los ingresos estaban fuera de la tabla.
+> - Las ganancias fueron ***más altas*** que nunca.
+>
+> *Todo* esta yendo ***según*** el **plan**.
+</code></pre><blockquote><h3>¡Los resultados trimestrales se ven geniales!</h3><ul><li>Los ingresos estaban fuera de la tabla.</li><li>Las ganancias fueron <em><strong>más altas</strong></em> que nunca.</li></ul><p><em>Todo</em> esta yendo <em><strong>según</strong></em> el <strong>plan</strong>.</p></blockquote><p class=pre-title>example.md</p><pre class="language-md line-numbers" data-title=example.md><code>> Este es un `mensaje`.
+
+> Este es un `mensaje` de éxito. {.text-success}
+
+> Este es un `mensaje` de información. {.text-info}
+
+> Este es un `mensaje` de advertencia. {.text-warning}
+
+> Este es un `mensaje` de peligro. {.text-danger}
+</code></pre><blockquote><p>Este es un <code>mensaje</code>.</p></blockquote><blockquote class=text-success><p>Este es un <code>mensaje</code> de éxito.</p></blockquote><blockquote class=text-info><p>Este es un <code>mensaje</code> de información.</p></blockquote><blockquote class=text-warning><p>Este es un <code>mensaje</code> de advertencia.</p></blockquote><blockquote class=text-danger><p>Este es un <code>mensaje</code> de peligro.</p></blockquote><h2 id=5-listas class=section>5. Listas</h2><p class=pre-title>example.md</p><pre class="language-md line-numbers" data-title=example.md><code>1. Primer item
+2. Segundo item
+3. Tercer item
+</code></pre><ol><li>Primer item</li><li>Segundo item</li><li>Tercer item</li></ol><p class=pre-title>example.md</p><pre class="language-md line-numbers" data-title=example.md><code>- Primer item
+- Segundo item
+- Tercer item
+</code></pre><ul><li>Primer item</li><li>Segundo item</li><li>Tercer item</li></ul><p class=pre-title>example.md</p><pre class="language-md line-numbers" data-title=example.md><code>1. Primer item
+2. Segundo item
+3. Tercer item
+    - Subitem
+    - Subitem
+4. Cuarto item
+</code></pre><ol><li>Primer item</li><li>Segundo item</li><li>Tercer item <ul><li>Subitem</li><li>Subitem</li></ul></li><li>Cuarto item</li></ol><p class=pre-title>example.md</p><pre class="language-md line-numbers" data-title=example.md><code>- Primer item
+- Segundo item
+- Tercer item
+    1. Subitem
+    2. Subitem
+- Cuarto item
+</code></pre><ul><li>Primer item</li><li>Segundo item</li><li>Tercer item <ol><li>Subitem</li><li>Subitem</li></ol></li><li>Cuarto item</li></ul><p class=pre-title>example.md</p><pre class="language-md line-numbers" data-title=example.md><code>* Este es el primer item de la lista.
+* Este es el segundo item de la lista.
+
+  Este párrafo pertenece al segundo item de la lista.
+
+* Y este es el tercer item de la lista.
+</code></pre><ul><li><p>Este es el primer item de la lista.</p></li><li><p>Este es el segundo item de la lista.</p><p>Este párrafo pertenece al segundo item de la lista.</p></li><li><p>Y este es el tercer item de la lista.</p></li></ul><p class=pre-title>example.md</p><pre class="language-md line-numbers" data-title=example.md><code>* Este es el primer item de la lista.
+* Este es el segundo item de la lista.
+
+  > Un bloque de texto se vería genial en el segundo item de la lista.
+
+* Y este es el tercer item de la lista.
+</code></pre><ul><li><p>Este es el primer item de la lista.</p></li><li><p>Este es el segundo item de la lista.</p><blockquote><p>Un bloque de texto se vería genial en el segundo item de la lista.</p></blockquote></li><li><p>Y este es el tercer item de la lista.</p></li></ul><p class=pre-title>example.md</p><pre class="language-md line-numbers" data-title=example.md><code>1.  Abre el archivo.
+2.  Encuentra el siguiente boque de código:
+
+    ```
+    &lt;html>
+      &lt;head>
+        &lt;title>Test&lt;/title>
+      &lt;/head>
+    ```
+
+3.  Actualiza el título.
+</code></pre><ol><li><p>Abre el archivo.</p></li><li><p>Encuentra el siguiente boque de código:</p><pre><code>&lt;html>
+  &lt;head>
+    &lt;title>Test&lt;/title>
+  &lt;/head>
+</code></pre></li><li><p>Actualiza el título.</p></li></ol><p class=pre-title>example.md</p><pre class="language-md line-numbers" data-title=example.md><code>1.  Abre el archivo que contiene a la mascota de linux.
+2.  Maravíllate con su belleza.
+
+    ![Tux](https://alexquispe.github.io/static/tux.png)
+
+3.  Cierra el archivo.
+</code></pre><ol><li><p>Abre el archivo que contiene a la mascota de linux.</p></li><li><p>Maravíllate con su belleza.</p><p><img src=https://alexquispe.github.io/static/tux.png alt=Tux></p></li><li><p>Cierra el archivo.</p></li></ol><h2 id=6-codigo class=section>6. Código</h2><p class=pre-title>example.md</p><pre class="language-md line-numbers" data-title=example.md><code>Ejecuta el comando `cat /etc/os-release` para ver
+la versión del Sistema Operativo.
+</code></pre><p>Ejecuta el comando <code>cat /etc/os-release</code> para ver la versión del Sistema Operativo.</p><p class=pre-title>example.md</p><pre class="language-md line-numbers" data-title=example.md><code>```
+app
+  ├─ logs
+  │     ├─ info.log
+  │     ├─ warn.log
+  │     └─ error.log
+  ├─ logger.js
+  └─ index.js
+```
+</code></pre><pre><code>app
+  ├─ logs
+  │     ├─ info.log
+  │     ├─ warn.log
+  │     └─ error.log
+  ├─ logger.js
+  └─ index.js
+</code></pre><p class=pre-title>example.md</p><pre class="language-md line-numbers" data-title=example.md><code>```js
+setTimeout(function() {
+  console.log('Verás esto después de 1 segundo');
+}, 1000);
+```
+</code></pre><pre class=language-js><code>setTimeout(function() {
+  console.log('Verás esto después de 1 segundo');
+}, 1000);
+</code></pre><p class=pre-title>example.md</p><pre class="language-md line-numbers" data-title=example.md><code>```js {.line-numbers data-title="vue-example.js" data-line="8-12,16"}
+import Vue     from 'vue';
+import VueI18n from 'vue-i18n';
+
+import App from './App.vue';
+
+Vue.use(VueI18n);
+
+const messages = {
+  en: { message: { hello: 'Hello, {name}!' } },
+  de: { message: { hello: 'Guten Tag, {name}!' } },
+};
+const i18n = new VueI18n({ locale: 'en', messages });
+
+new Vue({
+  render: h => h(App),
+  i18n,
+}).$mount('#app');
+```
+</code></pre><p class=pre-title>vue-example.js</p><pre class="language-js line-numbers" data-title=vue-example.js data-line=8-12,16><code>import Vue     from 'vue';
+import VueI18n from 'vue-i18n';
+
+import App from './App.vue';
+
+Vue.use(VueI18n);
+
+const messages = {
+  en: { message: { hello: 'Hello, {name}!' } },
+  de: { message: { hello: 'Guten Tag, {name}!' } },
+};
+const i18n = new VueI18n({ locale: 'en', messages });
+
+new Vue({
+  render: h => h(App),
+  i18n,
+}).$mount('#app');
+</code></pre><p class=pre-title>example.md</p><pre class="language-md line-numbers" data-title=example.md><code>El siguiente comando muestra la versión del Sistema Operativo:
+
+```bash {.cmd}
+cat /etc/os-release
+```
+
+``` {.cmd-output}
+PRETTY_NAME="Debian GNU/Linux 10 (buster)"
+NAME="Debian GNU/Linux"
+VERSION_ID="10"
+VERSION="10 (buster)"
+...
+```
+</code></pre><p>El siguiente comando muestra la versión del Sistema Operativo:</p><pre class="language-bash cmd"><code>cat /etc/os-release
+</code></pre><pre class=cmd-output><code>PRETTY_NAME="Debian GNU/Linux 10 (buster)"
+NAME="Debian GNU/Linux"
+VERSION_ID="10"
+VERSION="10 (buster)"
+...
+</code></pre><h2 id=7-lineas-horizontales class=section>7. Líneas horizontales</h2><p class=pre-title>example.md</p><pre class="language-md line-numbers" data-title=example.md><code>Intenta colocar un espacio en blanco antes...
+
+---
+
+...y después de la línea horizontal.
+</code></pre><p>Intenta colocar un espacio en blanco antes...</p><hr><p>...y después de la línea horizontal.</p><h2 id=8-enlaces class=section>8. Enlaces</h2><p class=pre-title>example.md</p><pre class="language-md line-numbers" data-title=example.md><code>Mi motor de búsqueda favorito es
+[Duck Duck Go](https://duckduckgo.com).
+</code></pre><p>Mi motor de búsqueda favorito es <a href=https://duckduckgo.com>Duck Duck Go</a>.</p><p class=pre-title>example.md</p><pre class="language-md line-numbers" data-title=example.md><code>Mi motor de búsqueda favorito es
+[Duck Duck Go](https://duckduckgo.com "El mejor motor de búsqueda").
+</code></pre><p>Mi motor de búsqueda favorito es <a href=https://duckduckgo.com title="El mejor motor de búsqueda">Duck Duck Go</a>.</p><p class=pre-title>example.md</p><pre class="language-md line-numbers" data-title=example.md><code>&lt;https://www.markdownguide.org>
+
+&lt;fake@example.com>
+</code></pre><p><a href=https://www.markdownguide.org>https://www.markdownguide.org</a></p><p><a href=mailto:fake@example.com>fake@example.com</a></p><p class=pre-title>example.md</p><pre class="language-md line-numbers" data-title=example.md><code>El código se encuentra bajo la licencia **[MIT](https://oss.ninja/mit)**.
+
+Puedes encontrar más información en la
+*[Guía oficial de Markdown](https://www.markdownguide.org)*.
+</code></pre><p>El código se encuentra bajo la licencia <strong><a href=https://oss.ninja/mit>MIT</a></strong>.</p><p>Puedes encontrar más información en la <em><a href=https://www.markdownguide.org>Guía oficial de Markdown</a></em>.</p><p class=pre-title>example.md</p><pre class="language-md line-numbers" data-title=example.md><code>*“En un agujero en el suelo, vivía un hobbit. No un agujero húmedo, sucio,
+repugnante, con restos de gusanos y olor a fango, ni tampoco un agujero seco,
+desnudo y arenoso, sin nada en que sentarse o que comer: era un [agujero-hobbit][1],
+y eso significa comodidad.”* {.text-justify}
+
+*― J.R.R. Tolkien, The Hobbit, or There and Back Again* {.text-right}
+
+[1]: &lt;https://es.wikipedia.org/wiki/Hobbits> "Estilo de vida Hobbit"
+</code></pre><p class=text-justify><em>“En un agujero en el suelo, vivía un hobbit. No un agujero húmedo, sucio, repugnante, con restos de gusanos y olor a fango, ni tampoco un agujero seco, desnudo y arenoso, sin nada en que sentarse o que comer: era un <a href=https://es.wikipedia.org/wiki/Hobbits title="Estilo de vida Hobbit">agujero-hobbit</a>, y eso significa comodidad.”</em></p><p class=text-right><em>― J.R.R. Tolkien, The Hobbit, or There and Back Again</em></p><h2 id=9-imagenes class=section>9. Imágenes</h2><p class=pre-title>example.md</p><pre class="language-md line-numbers" data-title=example.md><code>![Tux](https://alexquispe.github.io/static/tux.png "Tux, la mascota de linux")
+</code></pre><p><img src=https://alexquispe.github.io/static/tux.png alt=Tux title="Tux, la mascota de linux"></p><p class=pre-title>example.md</p><pre class="language-md line-numbers" data-title=example.md><code>[![Tux](https://alexquispe.github.io/static/tux.png "Tux, la mascota de linux")](https://alexquispe.github.io/static/tux.png)
+</code></pre><p><a href=https://alexquispe.github.io/static/tux.png><img src=https://alexquispe.github.io/static/tux.png alt=Tux title="Tux, la mascota de linux"></a></p><p class=pre-title>example.md</p><pre class="language-md line-numbers" data-title=example.md><code>![Tux](https://alexquispe.github.io/static/linux.png){.w-25} {.text-center}
+</code></pre><p class=text-center><img src=https://alexquispe.github.io/static/linux.png alt=Tux class=w-25></p><h2 id=10-tablas class=section>10. Tablas</h2><p class=pre-title>example.md</p><pre class="language-md line-numbers" data-title=example.md><code>| Sintaxis   | Descripción |
+| ---------- | ----------- |
+| Encabezado | Título      |
+| Párrafo    | Texto       |
+</code></pre><div class=table-container><table><thead><tr><th>Sintaxis</th><th>Descripción</th></tr></thead><tbody><tr><td>Encabezado</td><td>Título</td></tr><tr><td>Párrafo</td><td>Texto</td></tr></tbody></table></div><p class=pre-title>example.md</p><pre class="language-md line-numbers" data-title=example.md><code>| Sintaxis   | Descripción | Texto de prueba |
+| :--------- | :----------:| --------------: |
+| Encabezado | Título      | Esto es así     |
+| Párrafo    | Texto       | Y más           |
+</code></pre><div class=table-container><table><thead><tr><th style=text-align:left>Sintaxis</th><th style=text-align:center>Descripción</th><th style=text-align:right>Texto de prueba</th></tr></thead><tbody><tr><td style=text-align:left>Encabezado</td><td style=text-align:center>Título</td><td style=text-align:right>Esto es así</td></tr><tr><td style=text-align:left>Párrafo</td><td style=text-align:center>Texto</td><td style=text-align:right>Y más</td></tr></tbody></table></div><p class=pre-title>example.md</p><pre class="language-md line-numbers" data-title=example.md><code>| Opción   | Descripción                             |
+| -------- | --------------------------------------- |
+| `--name` | Nombre del contenedor.                  |
+| `-e`     | Describe las variables de entorno.      |
+| `-d`     | Ejecuta el contenedor en segundo plano. |
+| `-p`     | Expone un puerto. `host:container`      |
+| `-it`    | Crea un shell bash interactivo.         |
+</code></pre><div class=table-container><table><thead><tr><th>Opción</th><th>Descripción</th></tr></thead><tbody><tr><td><code>--name</code></td><td>Nombre del contenedor.</td></tr><tr><td><code>-e</code></td><td>Describe las variables de entorno.</td></tr><tr><td><code>-d</code></td><td>Ejecuta el contenedor en segundo plano.</td></tr><tr><td><code>-p</code></td><td>Expone un puerto. <code>host:container</code></td></tr><tr><td><code>-it</code></td><td>Crea un shell bash interactivo.</td></tr></tbody></table></div><h2 id=referencias class=section>Referencias</h2><ul><li><a href=https://www.markdownguide.org/basic-syntax>Markdown Guide - Basic Syntax</a></li></ul></div></div></div><div class="row pt-5"><div class="col-12 py-5 text-right"><div class=tags-text><p><span class="icon icon-tags-solid" title=Etiquetas></span>&nbsp; <a href=./search?q=guide>guide</a>&nbsp;<a href=./search?q=md>md</a>&nbsp;</p></div></div><div class="col-12 py-1 text-left"><div class=published-text><p>Publicado: 2 de mayo de 2020</p></div></div></div></div></div></div></div><div id=to-top><div class=to-top-icon></div></div></div></div></article><footer class=_footer><div class=_footer-content><div class=app-footer><div class="container h-100"><div class="row d-flex align-items-center h-100"><div class="col text-center">El código se encuentra disponible bajo la licencia <a href=https://oss.ninja/mit target=_blank title="Licencia de software">MIT</a>, a menos que se indique lo contrario. <br><div class=copy>© 2024 <a href=https://github.com/ElArteDelCodigo title=https://github.com/ElArteDelCodigo>El arte del código</a> - Desarrollado con <a href=https://markojs.com target=_blank title=https://markojs.com>Marko JS</a></div><a href=https://elartedelcodigo.com/terms title=terms>Condiciones del Servicio</a> - <a href=https://elartedelcodigo.com/privacy title=privacy>Política de Privacidad</a></div></div></div></div></div></footer></div><script src=./static/resource-ec3908b4.js></script>
+<script>$_mod.ready();</script></body></html>

@@ -1,0 +1,197 @@
+<!DOCTYPE html><html lang=en data-theme=solarized-dark><head><base href=https://elartedelcodigo.github.io/ ><title>Guides and tutorials - Configuración de Nginx para entornos de producción</title><meta http-equiv=content-type content="text/html; charset=UTF-8"><meta http-equiv=X-UA-Compatible content=IE=edge><meta name=viewport content="width=device-width, initial-scale=1, maximum-scale=1"><meta name=theme-color content=#1c1c1c><meta name=description content="Configuraciones de Nginx para mejorar el rendimiento del servidor y el despliegue de aplicaciones en entornos de producción."><meta name=keywords content=config,cache,ssl,https,gzip,proxy,node,prod><meta name=author content=Admin><meta property=og:title content="Configuración de Nginx para entornos de producción"><meta property=og:description content="Configuraciones de Nginx para mejorar el rendimiento del servidor y el despliegue de aplicaciones en entornos de producción."><meta property=og:image content=https://elartedelcodigo.github.io/static/assets/img/logo.png><meta property=og:url content=https://elartedelcodigo.github.io/en/nginx/configuracion-de-nginx-para-entornos-de-produccion><meta property=og:site_name content="Guides and tutorials"><meta property=twitter:title content="Configuración de Nginx para entornos de producción"><meta property=twitter:description content="Configuraciones de Nginx para mejorar el rendimiento del servidor y el despliegue de aplicaciones en entornos de producción."><meta property=twitter:image content=https://elartedelcodigo.github.io/static/assets/img/logo.png><meta property=twitter:card content=summary><link rel=icon type=image/png sizes=32x32 href=./static/assets/favicon_32x32.png><link rel=icon type=image/png sizes=192x192 href=./static/assets/favicon_192x192.png><link rel=canonical href=https://elartedelcodigo.github.io/en/nginx/configuracion-de-nginx-para-entornos-de-produccion><link rel=alternate hreflang=en href=https://elartedelcodigo.github.io/en/nginx/configuracion-de-nginx-para-entornos-de-produccion><link rel=alternate hreflang=es href=https://elartedelcodigo.github.io/nginx/configuracion-de-nginx-para-entornos-de-produccion><link rel=alternate hreflang=x-default href=https://elartedelcodigo.github.io/nginx/configuracion-de-nginx-para-entornos-de-produccion><script>!function(){const t=document.getElementsByTagName("html")[0],e=window.localStorage.getItem("theme");e&&t.setAttribute("data-theme",e);const n=window.localStorage.getItem("lang");n&&n!==t.getAttribute("lang")&&(location.href=document.querySelector(`link[hreflang="${n}"]`).href)}();</script><style>@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400&display=swap');</style><link rel=stylesheet href=./static/resource-9d6539d5.css></head><body><div class=_app-root><header class=_header><div class=_header-content><div class=app-header><ul class=left><li><a class="btn menu-item" href=./en/home><span class="icon icon-dark icon-home-solid"></span> Home</a></li><li><a class="btn menu-item" href=./en/search><span class="icon icon-dark icon-bolt-solid"></span> Show all</a></li><li><a class="btn menu-item d-none d-xl-block" href=./en/bash>Bash</a></li><li><a class="btn menu-item d-none d-xl-block" href=./en/docker>Docker</a></li><li><a class="btn menu-item d-none d-xl-block" href=./en/git>Git</a></li><li><a class="btn menu-item d-none d-xl-block" href=./en/markdown>Markdown</a></li><li><a class="btn menu-item d-none d-xl-block" href=./en/nginx>Nginx</a></li><li><a class="btn menu-item d-none d-xl-block" href=./en/node>Node</a></li><li><a class="btn menu-item d-none d-xl-block" href=./en/postgres>Postgres</a></li><li><a class="btn menu-item d-none d-xl-block" href=./en/ssh>SSH</a></li><li><a class="btn menu-item d-none d-xl-block" href=./en/utilitarios>Utilitarios</a></li></ul><ul class=right><li class="d-none d-sm-flex align-items-center"><form id=search-form class=d-flex data-url=./en/search><span class="icon icon-dark icon-search-solid"></span><input id=search-form-q type=text placeholder=Search></form></li><li><div id=switch-theme-button class="btn menu-item" title="Change theme"><span class="icon icon-dark icon-adjust-solid"></span></div></li><li><div id=switch-language-button class="btn menu-item" data-es-title="Show the English version" data-en-title="Show the Spanish version">Es</div></li></ul></div></div></header><article class=_body><div class=_body-content><div class=body-content><div class="container v2"><div class=row><div class="col-xl-2 d-none d-xl-block"><div class="sidenav-container sticky-top"><div id=sidenav><ul><li><a class=sidenav-item section-link=1-certificados-ssl-con-lets-encrypt>1. Certificados SSL con Let's Encrypt</a></li><li><a class=sidenav-item section-link=2-certificados-ssl-autofirmados>2. Certificados SSL autofirmados</a></li><li><a class=sidenav-item section-link=3-verifica-la-navegacion-https>3. Verifica la navegación HTTPS</a></li><li><a class=sidenav-item section-link=4-habilita-el-control-de-cache>4. Habilita el control de caché</a></li><li><a class=sidenav-item section-link=5-habilita-la-compresion-de-ficheros>5. Habilita la compresión de ficheros</a></li><li><a class=sidenav-item section-link=6-paginas-de-error-personalizadas>6. Páginas de error personalizadas</a></li><li><a class=sidenav-item section-link=7-proxy-para-aplicaciones-de-nodejs>7. Proxy para aplicaciones de NodeJS</a></li><li><a class=sidenav-item section-link=8-remueve-la-extension-html>8. Remueve la extensión .html</a></li><li><a class=sidenav-item section-link=referencias>Referencias</a></li></ul></div></div></div><div class=col-xl-8><div class="container py-md-5 py-sm-3 py-0"><div class=row><div class="col text-center"><p class="mt-3 mb-0"><a class=category-link href=./en/nginx title=Category>#nginx</a></p></div></div><div class=row><div id=mark class=col><div xmlns=http://www.w3.org/1999/xhtml><h1>Configuración de Nginx para entornos de producción</h1><p>Configuraciones de <a href=https://www.nginx.com>Nginx</a> para mejorar el rendimiento del servidor y el despliegue de aplicaciones en entornos de producción.</p><p>Luego de aplicar cualquier configuración, debemos verificar la sintaxis y reiniciar el servicio.</p><pre class="language-bash cmd"><code>sudo nginx -t
+</code></pre><pre class=cmd-output><code>nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
+nginx: configuration file /etc/nginx/nginx.conf test is successful
+</code></pre><pre class="language-bash cmd"><code>sudo service nginx restart
+</code></pre><h2 id=1-certificados-ssl-con-lets-encrypt class=section>1. Certificados SSL con Let's Encrypt</h2><p>Para crear un certificado SSL con Let's Encrypt, revisa la sección <a href=nginx/instalacion-de-certificados-ssl-con-lets-encrypt-y-nginx-en-debian>Instalación de certificados SSL con Let's Encrypt y Nginx en Debian</a>.</p><pre class="language-bash cmd"><code>sudo nano /etc/nginx/sites-available/your_domain.com
+</code></pre><p class=pre-title>your_domain.com</p><pre class="language-bash line-numbers" data-line=14-17 data-title=your_domain.com><code>server {
+    listen 443 ssl default_server;
+    listen [::]:443 ssl default_server;
+
+    root /var/www/your_domain.com/html;
+    index index.html index.htm index.nginx-debian.html;
+
+    server_name your_domain.com www.your_domain.com;
+
+    location / {
+        try_files $uri $uri/ =404;
+    }
+
+    ssl_certificate /etc/letsencrypt/live/your_domain.com/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/your_domain.com/privkey.pem;
+    include /etc/letsencrypt/options-ssl-nginx.conf;
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem;
+}
+
+server {
+    listen 80;
+    listen [::]:80;
+
+    server_name your_domain.com www.your_domain.com;
+    return 301 https://$host$request_uri;
+}
+</code></pre><h2 id=2-certificados-ssl-autofirmados class=section>2. Certificados SSL autofirmados</h2><p>Para crear certificados SSL autofirmados en Debian 10 instala el paquete <code>ssl-cert</code></p><pre class="language-bash cmd"><code>sudo apt-get update &amp;&amp; sudo apt-get install -y ssl-cert
+</code></pre><p>y configura el archivo de configuración de Nginx de la siguiente manera:</p><pre class="language-bash cmd"><code>sudo nano /etc/nginx/sites-available/your_domain.com
+</code></pre><p class=pre-title>your_domain.com</p><pre class="language-bash line-numbers" data-line=14 data-title=your_domain.com><code>server {
+    listen 443 ssl default_server;
+    listen [::]:443 ssl default_server;
+
+    root /var/www/your_domain.com/html;
+    index index.html index.htm index.nginx-debian.html;
+
+    server_name your_domain.com www.your_domain.com;
+
+    location / {
+        try_files $uri $uri/ =404;
+    }
+
+    include snippets/snakeoil.conf;
+}
+
+server {
+    listen 80;
+    listen [::]:80;
+
+    server_name your_domain.com www.your_domain.com;
+    return 301 https://$host$request_uri;
+}
+</code></pre><h2 id=3-verifica-la-navegacion-https class=section>3. Verifica la navegación HTTPS</h2><p>Si tratamos de acceder con un certificado autofirmado, tendremos el siguiente resultado:</p><pre class=language-bash><code>curl https://your_domain.com
+</code></pre><pre class="language-bash cmd-output"><code>curl: (60) SSL certificate problem: self signed certificate
+More details here: https://curl.haxx.se/docs/sslcerts.html
+
+curl failed to verify the legitimacy of the server and therefore could not
+establish a secure connection to it. To learn more about this situation and
+how to fix it, please visit the web page mentioned above.
+</code></pre><p>Utiliza la opción <code>-k</code> para ignorar las advertencias.</p><pre class=language-bash><code>curl -k https://your_domain.com
+</code></pre><pre class="language-html cmd-output"><code>&lt;html>
+  &lt;head>
+    &lt;title>Welcome to your_domain.com!&lt;/title>
+  &lt;/head>
+  &lt;body>
+    &lt;h1>Success!  The your_domain.com server block is working!&lt;/h1>
+  &lt;/body>
+&lt;/html>
+</code></pre><p>Finalmente probamos las redirecciones:</p><pre class=language-bash><code>curl http://your_domain.com
+</code></pre><pre class="language-html cmd-output"><code>&lt;html>
+&lt;head>&lt;title>301 Moved Permanently&lt;/title>&lt;/head>
+&lt;body bgcolor="white">
+&lt;center>&lt;h1>301 Moved Permanently&lt;/h1>&lt;/center>
+&lt;hr>&lt;center>nginx/1.14.2&lt;/center>
+&lt;/body>
+&lt;/html>
+</code></pre><h2 id=4-habilita-el-control-de-cache class=section>4. Habilita el control de caché</h2><p>Especificando qué archivos serán cacheados y el tiempo de expiración.</p><pre class="language-bash cmd"><code>sudo nano /etc/nginx/sites-available/your_domain.com
+</code></pre><p class=pre-title>your_domain.com</p><pre class="language-bash line-numbers" data-line=10-13 data-title=your_domain.com><code>server {
+    listen 443 ssl default_server;
+    listen [::]:443 ssl default_server;
+
+    root /var/www/your_domain.com/html;
+    index index.html index.htm index.nginx-debian.html;
+
+    server_name your_domain.com www.your_domain.com;
+
+    location ~* \.(js|css|png|jpg|jpeg|gif|ico|svg)$ {
+        expires 10m;
+        add_header Cache-Control "public, no-transform";
+    }
+
+    location / {
+        try_files $uri $uri/ =404;
+    }
+
+    include snippets/snakeoil.conf;
+}
+</code></pre><h2 id=5-habilita-la-compresion-de-ficheros class=section>5. Habilita la compresión de ficheros</h2><p>Para optimizar el tamaño de los ficheros, habilitamos la compresión gzip.</p><pre class="language-bash cmd"><code>sudo nano /etc/nginx/sites-available/your_domain.com
+</code></pre><p class=pre-title>your_domain.com</p><pre class="language-bash line-numbers" data-line=14-20 data-title=your_domain.com><code>server {
+    listen 443 ssl default_server;
+    listen [::]:443 ssl default_server;
+
+    root /var/www/your_domain.com/html;
+    index index.html index.htm index.nginx-debian.html;
+
+    server_name your_domain.com www.your_domain.com;
+
+    location / {
+        try_files $uri $uri/ =404;
+    }
+
+    gzip on;
+    gzip_comp_level 3;
+    gzip_min_length 1000;
+    gzip_types  text/xml text/css;
+    gzip_http_version 1.1;
+    gzip_vary  on;
+    gzip_disable "MSIE [4-6] \.";
+
+    include snippets/snakeoil.conf;
+}
+</code></pre><h2 id=6-paginas-de-error-personalizadas class=section>6. Páginas de error personalizadas</h2><pre class="language-bash cmd"><code>sudo nano /usr/share/nginx/html/custom_404.html
+</code></pre><p class=pre-title>custom_404.html</p><pre data-title=custom_404.html class=language-html><code>&lt;!DOCTYPE html>
+&lt;html lang="en">
+&lt;head>
+  &lt;meta charset="UTF-8">
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0">
+  &lt;title>404 Not Found&lt;/title>
+&lt;/head>
+&lt;body>
+  404 Not Found
+&lt;/body>
+&lt;/html>
+</code></pre><pre class="language-bash cmd"><code>sudo nano /etc/nginx/sites-available/your_domain.com
+</code></pre><p class=pre-title>your_domain.com</p><pre class="language-bash line-numbers" data-line=14-18 data-title=your_domain.com><code>server {
+    listen 443 ssl default_server;
+    listen [::]:443 ssl default_server;
+
+    root /var/www/your_domain.com/html;
+    index index.html index.htm index.nginx-debian.html;
+
+    server_name your_domain.com www.your_domain.com;
+
+    location / {
+        try_files $uri $uri/ =404;
+    }
+
+    error_page 404 /custom_404.html;
+    location = /custom_404.html {
+        root /usr/share/nginx/html;
+        internal;
+    }
+
+    include snippets/snakeoil.conf;
+}
+</code></pre><h2 id=7-proxy-para-aplicaciones-de-nodejs class=section>7. Proxy para aplicaciones de NodeJS</h2><pre class="language-bash cmd"><code>sudo nano /etc/nginx/sites-available/your_domain.com
+</code></pre><p class=pre-title>your_domain.com</p><pre class="language-bash line-numbers" data-line=14-16 data-title=your_domain.com><code>server {
+    listen 443 ssl default_server;
+    listen [::]:443 ssl default_server;
+
+    root /var/www/your_domain.com/html;
+    index index.html index.htm index.nginx-debian.html;
+
+    server_name your_domain.com www.your_domain.com;
+
+    location / {
+        try_files $uri $uri/ =404;
+    }
+
+    location /node-app/ {
+        proxy_pass http://127.0.0.1:3000;
+    }
+
+    include snippets/snakeoil.conf;
+}
+</code></pre><h2 id=8-remueve-la-extension-html class=section>8. Remueve la extensión .html</h2><pre class="language-bash cmd"><code>sudo nano /etc/nginx/sites-available/your_domain.com
+</code></pre><p class=pre-title>your_domain.com</p><pre class="language-bash line-numbers" data-line=11 data-title=your_domain.com><code>server {
+    listen 443 ssl default_server;
+    listen [::]:443 ssl default_server;
+
+    root /var/www/your_domain.com/html;
+    index index.html index.htm index.nginx-debian.html;
+
+    server_name your_domain.com www.your_domain.com;
+
+    location / {
+        try_files $uri.html $uri $uri/ =404;
+    }
+
+    include snippets/snakeoil.conf;
+}
+</code></pre><p>Por ejemplo, si la petición es: <code>https://your_domain.com/page</code>, buscará la ruta en el siguiente orden:</p><ol><li>El archivo <code>/page.html</code></li><li>El archivo <code>/page</code></li><li>La carpeta <code>/page/</code></li></ol><p>Si no lo encuentra muestra la página de error 404.</p><h2 id=referencias class=section>Referencias</h2><ul><li><p><a href=https://www.keycdn.com/support/cache-control>Cache-Control - How to Properly Configure It</a></p></li><li><p><a href=https://geekflare.com/nginx-production-configuration>Configuring Nginx for Performance and Security</a></p></li><li><p><a href=https://chachocool.com/como-instalar-nginx-en-debian-10-buster>Cómo instalar Nginx en Debian 10 Buster</a></p></li><li><p><a href=https://scottlinux.com/2012/02/14/curl-ignore-ssl-certificate-warnings>cURL Ignore SSL Certificate Warnings</a></p></li></ul></div></div></div><div class="row pt-5"><div class="col-12 py-5 text-right"><div class=tags-text><p><span class="icon icon-tags-solid" title=Tags></span>&nbsp; <a href=./en/search?q=config>config</a>&nbsp;<a href=./en/search?q=cache>cache</a>&nbsp;<a href=./en/search?q=ssl>ssl</a>&nbsp;<a href=./en/search?q=https>https</a>&nbsp;<a href=./en/search?q=gzip>gzip</a>&nbsp;<a href=./en/search?q=proxy>proxy</a>&nbsp;<a href=./en/search?q=node>node</a>&nbsp;<a href=./en/search?q=prod>prod</a>&nbsp;</p></div></div><div class="col-12 py-1 text-left"><div class=published-text><p>Published: June 8, 2020</p></div></div></div></div></div></div></div><div id=to-top><div class=to-top-icon></div></div></div></div></article><footer class=_footer><div class=_footer-content><div class=app-footer><div class="container h-100"><div class="row d-flex align-items-center h-100"><div class="col text-center">Code licenced under <a href=https://oss.ninja/mit target=_blank title="Software License">MIT</a>, unless otherwise noted. <br><div class=copy>© 2024 <a href=https://github.com/ElArteDelCodigo title=https://github.com/ElArteDelCodigo>El arte del código</a> - Built with <a href=https://markojs.com target=_blank title=https://markojs.com>Marko JS</a></div><a href=https://elartedelcodigo.com/terms title=terms>Terms of Service</a> - <a href=https://elartedelcodigo.com/privacy title=privacy>Privacy Policy</a></div></div></div></div></div></footer></div><script src=./static/resource-ec3908b4.js></script>
+<script>$_mod.ready();</script></body></html>
