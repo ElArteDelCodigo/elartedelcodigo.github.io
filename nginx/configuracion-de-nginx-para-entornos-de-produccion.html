@@ -62,25 +62,25 @@ curl failed to verify the legitimacy of the server and therefore could not
 establish a secure connection to it. To learn more about this situation and
 how to fix it, please visit the web page mentioned above.
 </code></pre><p>Utiliza la opción <code>-k</code> para ignorar la advertencia y continuar.</p><pre class=language-bash><code>curl -k https://your_domain.com
-</code></pre><pre class="language-html cmd-output"><code>&lt;html>
-  &lt;head>
-    &lt;title>Welcome to your_domain.com!&lt;/title>
-  &lt;/head>
-  &lt;body>
-    &lt;h1>Success! The your_domain.com server block is working!&lt;/h1>
-  &lt;/body>
-&lt;/html>
+</code></pre><pre class="language-html cmd-output"><code>&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;Welcome to your_domain.com!&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Success! The your_domain.com server block is working!&lt;/h1&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
 </code></pre><p>Finalmente prueba la redirección de HTTP a HTTPS:</p><pre class=language-bash><code>curl http://your_domain.com
-</code></pre><pre class="language-html cmd-output"><code>&lt;html>
-  &lt;head>
-    &lt;title>301 Moved Permanently&lt;/title>
-  &lt;/head>
-  &lt;body bgcolor="white">
-    &lt;center>&lt;h1>301 Moved Permanently&lt;/h1>&lt;/center>
-    &lt;hr />
-    &lt;center>nginx/1.14.2&lt;/center>
-  &lt;/body>
-&lt;/html>
+</code></pre><pre class="language-html cmd-output"><code>&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;301 Moved Permanently&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body bgcolor="white"&gt;
+    &lt;center&gt;&lt;h1&gt;301 Moved Permanently&lt;/h1&gt;&lt;/center&gt;
+    &lt;hr /&gt;
+    &lt;center&gt;nginx/1.14.2&lt;/center&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
 </code></pre><h2 id=4-habilita-el-control-de-cache class=section>4. Habilita el control de caché</h2><p>Especifica qué extensiones deben almacenarse en caché y durante cuánto tiempo.</p><pre class="language-bash cmd"><code>sudo nano /etc/nginx/sites-available/your_domain.com
 </code></pre><p class=pre-title>your_domain.com</p><pre class="language-bash line-numbers" data-line=10-13 data-title=your_domain.com><code>server {
     listen 443 ssl default_server;
@@ -127,17 +127,17 @@ how to fix it, please visit the web page mentioned above.
     include snippets/snakeoil.conf;
 }
 </code></pre><h2 id=6-paginas-de-error-personalizadas class=section>6. Páginas de error personalizadas</h2><p>Define una página HTML personalizada y referencia el archivo desde el bloque del sitio.</p><pre class="language-bash cmd"><code>sudo nano /usr/share/nginx/html/custom_404.html
-</code></pre><p class=pre-title>custom_404.html</p><pre data-title=custom_404.html class=language-html><code>&lt;!DOCTYPE html>
-&lt;html lang="en">
-  &lt;head>
-    &lt;meta charset="UTF-8" />
-    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    &lt;title>404 Not Found&lt;/title>
-  &lt;/head>
-  &lt;body>
+</code></pre><p class=pre-title>custom_404.html</p><pre data-title=custom_404.html class=language-html><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+  &lt;head&gt;
+    &lt;meta charset="UTF-8" /&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0" /&gt;
+    &lt;title&gt;404 Not Found&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
     404 Not Found
-  &lt;/body>
-&lt;/html>
+  &lt;/body&gt;
+&lt;/html&gt;
 </code></pre><pre class="language-bash cmd"><code>sudo nano /etc/nginx/sites-available/your_domain.com
 </code></pre><p class=pre-title>your_domain.com</p><pre class="language-bash line-numbers" data-line=14-18 data-title=your_domain.com><code>server {
     listen 443 ssl default_server;
@@ -196,5 +196,5 @@ how to fix it, please visit the web page mentioned above.
 
     include snippets/snakeoil.conf;
 }
-</code></pre><p>Por ejemplo, si la petición es: <code>https://your_domain.com/page</code>, buscará la ruta en el siguiente orden:</p><ol><li>El archivo <code>/page.html</code></li><li>El archivo <code>/page</code></li><li>La carpeta <code>/page/</code></li></ol><p>Si no lo encuentra muestra la página de error 404.</p><h2 id=referencias class=section>Referencias</h2><ul><li><p><a href=https://www.keycdn.com/support/cache-control>Cache-Control - How to Properly Configure It</a></p></li><li><p><a href=https://geekflare.com/nginx-production-configuration>Configuring Nginx for Performance and Security</a></p></li><li><p><a href=https://chachocool.com/como-instalar-nginx-en-debian-10-buster>Cómo instalar Nginx en Debian 10 Buster</a></p></li><li><p><a href=https://scottlinux.com/2012/02/14/curl-ignore-ssl-certificate-warnings>cURL Ignore SSL Certificate Warnings</a></p></li></ul></div></div></div><div class="row pt-5"><div class="col-12 py-5 text-right"><div class=tags-text><p><span class="icon icon-tags-solid" title=Etiquetas></span>&nbsp; <a href=./search?q=config>config</a>&nbsp;<a href=./search?q=cache>cache</a>&nbsp;<a href=./search?q=ssl>ssl</a>&nbsp;<a href=./search?q=https>https</a>&nbsp;<a href=./search?q=gzip>gzip</a>&nbsp;<a href=./search?q=proxy>proxy</a>&nbsp;<a href=./search?q=node>node</a>&nbsp;<a href=./search?q=prod>prod</a>&nbsp;</p></div></div><div class="col-12 py-1 text-left"><div class=published-text><p>Publicado: 8 de junio de 2020</p></div></div></div></div></div></div></div><div id=to-top><div class=to-top-icon></div></div></div></div></article><footer class=_footer><div class=_footer-content><div class=app-footer><div class="container h-100"><div class="row d-flex align-items-center h-100"><div class="col text-center">El código se encuentra disponible bajo la licencia <a href=https://oss.ninja/mit target=_blank title="Licencia de software">MIT</a>, a menos que se indique lo contrario. <br><div class=copy>© 2025 <a href=https://github.com/ElArteDelCodigo title=https://github.com/ElArteDelCodigo>El arte del código</a> - Desarrollado con <a href=https://markojs.com target=_blank title=https://markojs.com>Marko JS</a></div><a href=https://elartedelcodigo.com/terms title=terms>Condiciones del Servicio</a> - <a href=https://elartedelcodigo.com/privacy title=privacy>Política de Privacidad</a></div></div></div></div></div></footer></div><script src="./static/resource-c8a9a279.js"></script>
+</code></pre><p>Por ejemplo, si la petición es: <code>https://your_domain.com/page</code>, buscará la ruta en el siguiente orden:</p><ol><li>El archivo <code>/page.html</code></li><li>El archivo <code>/page</code></li><li>La carpeta <code>/page/</code></li></ol><p>Si no lo encuentra muestra la página de error 404.</p><h2 id=referencias class=section>Referencias</h2><ul><li><p><a href=https://www.keycdn.com/support/cache-control>Cache-Control - How to Properly Configure It</a></p></li><li><p><a href=https://geekflare.com/nginx-production-configuration>Configuring Nginx for Performance and Security</a></p></li><li><p><a href=https://chachocool.com/como-instalar-nginx-en-debian-10-buster>Cómo instalar Nginx en Debian 10 Buster</a></p></li><li><p><a href=https://scottlinux.com/2012/02/14/curl-ignore-ssl-certificate-warnings>cURL Ignore SSL Certificate Warnings</a></p></li></ul></div></div></div><div class="row pt-5"><div class="col-12 py-5 text-right"><div class=tags-text><p><span class="icon icon-tags-solid" title=Etiquetas></span>&nbsp; <a href=./search?q=config>config</a>&nbsp;<a href=./search?q=cache>cache</a>&nbsp;<a href=./search?q=ssl>ssl</a>&nbsp;<a href=./search?q=https>https</a>&nbsp;<a href=./search?q=gzip>gzip</a>&nbsp;<a href=./search?q=proxy>proxy</a>&nbsp;<a href=./search?q=node>node</a>&nbsp;<a href=./search?q=prod>prod</a>&nbsp;</p></div></div><div class="col-12 py-1 text-left"><div class=published-text><p>Publicado: 8 de junio de 2020</p></div></div></div></div></div></div></div><div id=to-top><div class=to-top-icon></div></div></div></div></article><footer class=_footer><div class=_footer-content><div class=app-footer><div class="container h-100"><div class="row d-flex align-items-center h-100"><div class="col text-center">El código se encuentra disponible bajo la licencia <a href=https://oss.ninja/mit target=_blank title="Licencia de software">MIT</a>, a menos que se indique lo contrario. <br><div class=copy>© 2025 <a href=https://github.com/ElArteDelCodigo title=https://github.com/ElArteDelCodigo>El arte del código</a> - Desarrollado con <a href=https://markojs.com target=_blank title=https://markojs.com>Marko JS</a></div><a href=https://elartedelcodigo.com/terms title=terms>Condiciones del Servicio</a> - <a href=https://elartedelcodigo.com/privacy title=privacy>Política de Privacidad</a></div></div></div></div></div></footer></div><script src="./static/resource-8199366c.js"></script>
 <script>$_mod.ready();</script></body></html>

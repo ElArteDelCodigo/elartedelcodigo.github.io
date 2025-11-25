@@ -23,14 +23,14 @@ change by editing your web server's configuration.
 Select the appropriate number [1-2] then [enter] (press 'c' to cancel):
 </code></pre><p>Elige la opción <code>2</code> para que Certbot configure las redirecciones automáticamente.</p><p>Reinicia el servicio de Nginx.</p><pre class="language-bash cmd"><code>sudo service nginx restart
 </code></pre><p>Verifica los cambios desde el navegador o mediante <code>curl</code>.</p><pre class="language-bash cmd"><code>curl https://your_domain.com
-</code></pre><pre class="language-html cmd-output"><code>&lt;html>
-  &lt;head>
-    &lt;title>Welcome to your_domain.com!&lt;/title>
-  &lt;/head>
-  &lt;body>
-    &lt;h1>Success! The your_domain.com server block is working!&lt;/h1>
-  &lt;/body>
-&lt;/html>
+</code></pre><pre class="language-html cmd-output"><code>&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;Welcome to your_domain.com!&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Success! The your_domain.com server block is working!&lt;/h1&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
 </code></pre><h2 id=4-añade-un-dominio-a-un-certificado-existente class=section>4. Añade un dominio a un certificado existente</h2><p>Agrega el subdominio <code>blog.your_domain.com</code> a un certificado ya emitido.</p><pre class="language-bash cmd"><code>sudo certbot -d blog.your_domain.com --expand
 </code></pre><p>Reinicia el servicio de Nginx.</p><pre class="language-bash cmd"><code>sudo service nginx restart
 </code></pre><h2 id=5-elimina-un-dominio-de-un-certificado class=section>5. Elimina un dominio de un certificado</h2><p>Elimina el dominio <code>blog.your_domain.com</code> de un certificado existente.</p><pre class="language-bash cmd"><code>sudo certbot delete --cert-name blog.your_domain.com
@@ -86,5 +86,5 @@ Congratulations, all renewals succeeded. The following certs have been renewed:
 **          (The test certificates above have not been saved.)
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 </code></pre><p>Programa la renovación automática con un cron o timer del sistema.</p><pre class="language-bash cmd"><code>sudo certbot renew --quiet --no-self-upgrade
-</code></pre><h2 id=referencias class=section>Referencias</h2><ul><li><p><a href=https://www.digitalocean.com/community/tutorials/how-to-secure-nginx-with-let-s-encrypt-on-debian-9>How To Secure Nginx with Let's Encrypt on Debian 9</a></p></li><li><p><a href=https://medium.com/@mhagemann/correct-way-to-delete-a-certbot-ssl-certificate-e8ee123e6e01>Correct Way to Delete a Certbot SSL Certificate</a></p></li></ul></div></div></div><div class="row pt-5"><div class="col-12 py-5 text-right"><div class=tags-text><p><span class="icon icon-tags-solid" title=Etiquetas></span>&nbsp; <a href=./search?q=install>install</a>&nbsp;<a href=./search?q=cert>cert</a>&nbsp;<a href=./search?q=ssl>ssl</a>&nbsp;</p></div></div><div class="col-12 py-1 text-left"><div class=published-text><p>Publicado: 6 de junio de 2020</p></div></div></div></div></div></div></div><div id=to-top><div class=to-top-icon></div></div></div></div></article><footer class=_footer><div class=_footer-content><div class=app-footer><div class="container h-100"><div class="row d-flex align-items-center h-100"><div class="col text-center">El código se encuentra disponible bajo la licencia <a href=https://oss.ninja/mit target=_blank title="Licencia de software">MIT</a>, a menos que se indique lo contrario. <br><div class=copy>© 2025 <a href=https://github.com/ElArteDelCodigo title=https://github.com/ElArteDelCodigo>El arte del código</a> - Desarrollado con <a href=https://markojs.com target=_blank title=https://markojs.com>Marko JS</a></div><a href=https://elartedelcodigo.com/terms title=terms>Condiciones del Servicio</a> - <a href=https://elartedelcodigo.com/privacy title=privacy>Política de Privacidad</a></div></div></div></div></div></footer></div><script src="./static/resource-c8a9a279.js"></script>
+</code></pre><h2 id=referencias class=section>Referencias</h2><ul><li><p><a href=https://www.digitalocean.com/community/tutorials/how-to-secure-nginx-with-let-s-encrypt-on-debian-9>How To Secure Nginx with Let's Encrypt on Debian 9</a></p></li><li><p><a href=https://medium.com/@mhagemann/correct-way-to-delete-a-certbot-ssl-certificate-e8ee123e6e01>Correct Way to Delete a Certbot SSL Certificate</a></p></li></ul></div></div></div><div class="row pt-5"><div class="col-12 py-5 text-right"><div class=tags-text><p><span class="icon icon-tags-solid" title=Etiquetas></span>&nbsp; <a href=./search?q=install>install</a>&nbsp;<a href=./search?q=cert>cert</a>&nbsp;<a href=./search?q=ssl>ssl</a>&nbsp;</p></div></div><div class="col-12 py-1 text-left"><div class=published-text><p>Publicado: 6 de junio de 2020</p></div></div></div></div></div></div></div><div id=to-top><div class=to-top-icon></div></div></div></div></article><footer class=_footer><div class=_footer-content><div class=app-footer><div class="container h-100"><div class="row d-flex align-items-center h-100"><div class="col text-center">El código se encuentra disponible bajo la licencia <a href=https://oss.ninja/mit target=_blank title="Licencia de software">MIT</a>, a menos que se indique lo contrario. <br><div class=copy>© 2025 <a href=https://github.com/ElArteDelCodigo title=https://github.com/ElArteDelCodigo>El arte del código</a> - Desarrollado con <a href=https://markojs.com target=_blank title=https://markojs.com>Marko JS</a></div><a href=https://elartedelcodigo.com/terms title=terms>Condiciones del Servicio</a> - <a href=https://elartedelcodigo.com/privacy title=privacy>Política de Privacidad</a></div></div></div></div></div></footer></div><script src="./static/resource-8199366c.js"></script>
 <script>$_mod.ready();</script></body></html>

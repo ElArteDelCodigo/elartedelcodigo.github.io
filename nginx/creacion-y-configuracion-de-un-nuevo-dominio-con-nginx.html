@@ -2,14 +2,14 @@
 </code></pre><p>Asigna permisos adecuados.</p><pre class="language-bash cmd"><code>sudo chown -R $USER:$USER /var/www/your_domain.com/html
 </code></pre><pre class="language-bash cmd"><code>sudo chmod -R 755 /var/www/your_domain.com
 </code></pre><p>Crea el archivo <code>index.html</code> para mostrar una página de prueba.</p><pre class="language-bash cmd"><code>nano /var/www/your_domain.com/html/index.html
-</code></pre><p class=pre-title>index.html</p><pre class="language-html line-numbers" data-title=index.html data-line=3,6><code>&lt;html>
-  &lt;head>
-    &lt;title>Welcome to your_domain.com!&lt;/title>
-  &lt;/head>
-  &lt;body>
-    &lt;h1>Success! The your_domain.com server block is working!&lt;/h1>
-  &lt;/body>
-&lt;/html>
+</code></pre><p class=pre-title>index.html</p><pre class="language-html line-numbers" data-title=index.html data-line=3,6><code>&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;Welcome to your_domain.com!&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Success! The your_domain.com server block is working!&lt;/h1&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
 </code></pre><h2 id=2-configuracion-en-nginx class=section>2. Configuración en Nginx</h2><p>Crea el archivo de configuración del sitio.</p><pre class="language-bash cmd"><code>sudo nano /etc/nginx/sites-available/your_domain.com
 </code></pre><p class=pre-title>your_domain.com</p><pre class="language-bash line-numbers" data-title=your_domain.com data-line=5,8><code>server {
     listen 80;
@@ -44,13 +44,13 @@ nginx: configuration file /etc/nginx/nginx.conf test is successful
 
 127.0.0.1       your_domain.com
 </code></pre><h2 id=4-verificacion class=section>4. Verificación</h2><p>Visita <a href=http://your_domain.com>http://your_domain.com</a> desde el navegador o usa <code>curl</code>.</p><pre class="language-bash cmd"><code>curl http://your_domain.com
-</code></pre><pre class="language-html cmd-output"><code>&lt;html>
-  &lt;head>
-    &lt;title>Welcome to your_domain.com!&lt;/title>
-  &lt;/head>
-  &lt;body>
-    &lt;h1>Success! The your_domain.com server block is working!&lt;/h1>
-  &lt;/body>
-&lt;/html>
-</code></pre><h2 id=referencias class=section>Referencias</h2><ul><li><p><a href=https://www.digitalocean.com/community/tutorials/how-to-install-nginx-on-ubuntu-20-04-quickstart>How To Install Nginx on Ubuntu 20.04 [Quickstart]</a></p></li><li><p><a href=https://www.digitalocean.com/community/tutorials/how-to-configure-nginx-to-use-custom-error-pages-on-ubuntu-14-04>How To Configure Nginx to Use Custom Error Pages on Ubuntu 14.04</a></p></li></ul></div></div></div><div class="row pt-5"><div class="col-12 py-5 text-right"><div class=tags-text><p><span class="icon icon-tags-solid" title=Etiquetas></span>&nbsp; <a href=./search?q=install>install</a>&nbsp;<a href=./search?q=config>config</a>&nbsp;<a href=./search?q=domain>domain</a>&nbsp;<a href=./search?q=proxy>proxy</a>&nbsp;</p></div></div><div class="col-12 py-1 text-left"><div class=published-text><p>Publicado: 6 de junio de 2020</p></div></div></div></div></div></div></div><div id=to-top><div class=to-top-icon></div></div></div></div></article><footer class=_footer><div class=_footer-content><div class=app-footer><div class="container h-100"><div class="row d-flex align-items-center h-100"><div class="col text-center">El código se encuentra disponible bajo la licencia <a href=https://oss.ninja/mit target=_blank title="Licencia de software">MIT</a>, a menos que se indique lo contrario. <br><div class=copy>© 2025 <a href=https://github.com/ElArteDelCodigo title=https://github.com/ElArteDelCodigo>El arte del código</a> - Desarrollado con <a href=https://markojs.com target=_blank title=https://markojs.com>Marko JS</a></div><a href=https://elartedelcodigo.com/terms title=terms>Condiciones del Servicio</a> - <a href=https://elartedelcodigo.com/privacy title=privacy>Política de Privacidad</a></div></div></div></div></div></footer></div><script src="./static/resource-c8a9a279.js"></script>
+</code></pre><pre class="language-html cmd-output"><code>&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;Welcome to your_domain.com!&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Success! The your_domain.com server block is working!&lt;/h1&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre><h2 id=referencias class=section>Referencias</h2><ul><li><p><a href=https://www.digitalocean.com/community/tutorials/how-to-install-nginx-on-ubuntu-20-04-quickstart>How To Install Nginx on Ubuntu 20.04 [Quickstart]</a></p></li><li><p><a href=https://www.digitalocean.com/community/tutorials/how-to-configure-nginx-to-use-custom-error-pages-on-ubuntu-14-04>How To Configure Nginx to Use Custom Error Pages on Ubuntu 14.04</a></p></li></ul></div></div></div><div class="row pt-5"><div class="col-12 py-5 text-right"><div class=tags-text><p><span class="icon icon-tags-solid" title=Etiquetas></span>&nbsp; <a href=./search?q=install>install</a>&nbsp;<a href=./search?q=config>config</a>&nbsp;<a href=./search?q=domain>domain</a>&nbsp;<a href=./search?q=proxy>proxy</a>&nbsp;</p></div></div><div class="col-12 py-1 text-left"><div class=published-text><p>Publicado: 6 de junio de 2020</p></div></div></div></div></div></div></div><div id=to-top><div class=to-top-icon></div></div></div></div></article><footer class=_footer><div class=_footer-content><div class=app-footer><div class="container h-100"><div class="row d-flex align-items-center h-100"><div class="col text-center">El código se encuentra disponible bajo la licencia <a href=https://oss.ninja/mit target=_blank title="Licencia de software">MIT</a>, a menos que se indique lo contrario. <br><div class=copy>© 2025 <a href=https://github.com/ElArteDelCodigo title=https://github.com/ElArteDelCodigo>El arte del código</a> - Desarrollado con <a href=https://markojs.com target=_blank title=https://markojs.com>Marko JS</a></div><a href=https://elartedelcodigo.com/terms title=terms>Condiciones del Servicio</a> - <a href=https://elartedelcodigo.com/privacy title=privacy>Política de Privacidad</a></div></div></div></div></div></footer></div><script src="./static/resource-8199366c.js"></script>
 <script>$_mod.ready();</script></body></html>
