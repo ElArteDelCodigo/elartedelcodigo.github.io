@@ -1,5 +1,0 @@
-src/assets/github/image_1.png
-src/assets/github/image_2.png
-src/assets/github/image_3.png
-src/assets/github/image_4.png
-src/assets/github/image_5.png
