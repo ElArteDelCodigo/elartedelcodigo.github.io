@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang=es data-theme=solarized-dark><head><base href=https://elartedelcodigo.com/ ><title>Guías y tutoriales - Guía de Markdown</title><meta http-equiv=content-type content="text/html; charset=UTF-8"><meta http-equiv=X-UA-Compatible content=IE=edge><meta name=viewport content="width=device-width, initial-scale=1, maximum-scale=1"><meta name=theme-color content=#1c1c1c><meta name=description content="Colección de ejemplos para generar contenido HTML a partir de archivos Markdown."><meta name=keywords content=guide,md><meta name=author content=Admin><meta property=og:title content="Guía de Markdown"><meta property=og:description content="Colección de ejemplos para generar contenido HTML a partir de archivos Markdown."><meta property=og:image content=https://elartedelcodigo.com/static/assets/img/logo.png><meta property=og:url content=https://elartedelcodigo.com/markdown/guia-de-markdown><meta property=og:site_name content="Guías y tutoriales"><meta property=twitter:title content="Guía de Markdown"><meta property=twitter:description content="Colección de ejemplos para generar contenido HTML a partir de archivos Markdown."><meta property=twitter:image content=https://elartedelcodigo.com/static/assets/img/logo.png><meta property=twitter:card content=summary><link rel=icon type=image/png sizes=32x32 href=./static/assets/favicon_32x32.png><link rel=icon type=image/png sizes=192x192 href=./static/assets/favicon_192x192.png><link rel=canonical href=https://elartedelcodigo.com/markdown/guia-de-markdown><link rel=alternate hreflang=en href=https://elartedelcodigo.com/en/markdown/guia-de-markdown><link rel=alternate hreflang=es href=https://elartedelcodigo.com/markdown/guia-de-markdown><link rel=alternate hreflang=x-default href=https://elartedelcodigo.com/markdown/guia-de-markdown><script>!function(){const t=document.getElementsByTagName("html")[0],e=window.localStorage.getItem("theme");e&&t.setAttribute("data-theme",e);const n=window.localStorage.getItem("lang");n&&n!==t.getAttribute("lang")&&(location.href=document.querySelector(`link[hreflang="${n}"]`).href)}();</script><style>@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400&display=swap');</style><link rel="stylesheet" href="./static/resource-9d6539d5.css"></head><body><div class=_app-root><header class=_header><div class=_header-content><div class=app-header><ul class=left><li><a class="btn menu-item" href=./ ><span class="icon icon-dark icon-home-solid"></span> Inicio</a></li><li><a class="btn menu-item" href=./search><span class="icon icon-dark icon-bolt-solid"></span> Ver todos</a></li><li><a class="btn menu-item d-none d-xl-block" href=./bash>Bash</a></li><li><a class="btn menu-item d-none d-xl-block" href=./docker>Docker</a></li><li><a class="btn menu-item d-none d-xl-block" href=./git>Git</a></li><li><a class="btn menu-item d-none d-xl-block" href=./markdown>Markdown</a></li><li><a class="btn menu-item d-none d-xl-block" href=./nginx>Nginx</a></li><li><a class="btn menu-item d-none d-xl-block" href=./node>Node</a></li><li><a class="btn menu-item d-none d-xl-block" href=./postgres>Postgres</a></li><li><a class="btn menu-item d-none d-xl-block" href=./ssh>SSH</a></li><li><a class="btn menu-item d-none d-xl-block" href=./utilitarios>Utilitarios</a></li></ul><ul class=right><li class="d-none d-sm-flex align-items-center"><form id=search-form class=d-flex data-url=./search><span class="icon icon-dark icon-search-solid"></span><input id=search-form-q type=text placeholder=Buscar></form></li><li><div id=switch-theme-button class="btn menu-item" title="Cambiar tema"><span class="icon icon-dark icon-adjust-solid"></span></div></li><li><div id=switch-language-button class="btn menu-item" data-es-title="Muestra la versión en Inglés" data-en-title="Muestra la versión en Español">En</div></li></ul></div></div></header><article class=_body><div class=_body-content><div class=body-content><div class="container v2"><div class=row><div class="col-xl-2 d-none d-xl-block"><div class="sidenav-container sticky-top"><div id=sidenav><ul><li><a class=sidenav-item section-link=1-encabezados>1. Encabezados</a></li><li><a class=sidenav-item section-link=2-parrafos>2. Párrafos</a></li><li><a class=sidenav-item section-link=3-enfasis>3. Énfasis</a></li><li><a class=sidenav-item section-link=4-bloques-de-texto>4. Bloques de texto</a></li><li><a class=sidenav-item section-link=5-listas>5. Listas</a></li><li><a class=sidenav-item section-link=6-codigo>6. Código</a></li><li><a class=sidenav-item section-link=7-lineas-horizontales>7. Líneas horizontales</a></li><li><a class=sidenav-item section-link=8-enlaces>8. Enlaces</a></li><li><a class=sidenav-item section-link=9-imagenes>9. Imágenes</a></li><li><a class=sidenav-item section-link=10-tablas>10. Tablas</a></li><li><a class=sidenav-item section-link=referencias>Referencias</a></li></ul></div></div></div><div class=col-xl-8><div class="container py-md-5 py-sm-3 py-0"><div class=row><div class="col text-center"><p class="mt-3 mb-0"><a class=category-link href=./markdown title=Categoría>#markdown</a></p></div></div><div class=row><div id=mark class=col><div xmlns=http://www.w3.org/1999/xhtml><h1>Guía de Markdown</h1><p>Colección de ejemplos para generar contenido <a href=https://developer.mozilla.org/es/docs/Web/HTML title="Lenguaje de Marcado de Hipertextos">HTML</a> a partir de archivos <a href=https://markdown.es title="Herramienta de conversión de texto plano a HTML">Markdown</a>.</p><h2 id=1-encabezados class=section>1. Encabezados</h2><p>Crea jerarquías de títulos con el carácter <code>#</code>. Mientras más <code>#</code>, menor el nivel del encabezado.</p><p class=pre-title>example.md</p><pre class="language-md line-numbers" data-title=example.md><code># Encabezado de nivel 1
+<!DOCTYPE html><html lang=es data-theme=solarized-dark><head><base href=https://elartedelcodigo.com/ ><title>Guías y tutoriales - Guía de Markdown</title><meta http-equiv=content-type content="text/html; charset=UTF-8"><meta http-equiv=X-UA-Compatible content=IE=edge><meta name=viewport content="width=device-width, initial-scale=1, maximum-scale=1"><meta name=theme-color content=#1c1c1c><meta name=description content="Colección de ejemplos para generar contenido HTML a partir de archivos Markdown."><meta name=keywords content=guide,md><meta name=author content=Admin><meta property=og:title content="Guía de Markdown"><meta property=og:description content="Colección de ejemplos para generar contenido HTML a partir de archivos Markdown."><meta property=og:image content=https://elartedelcodigo.com/static/assets/img/logo.png><meta property=og:url content=https://elartedelcodigo.com/markdown/guia-de-markdown><meta property=og:site_name content="Guías y tutoriales"><meta property=twitter:title content="Guía de Markdown"><meta property=twitter:description content="Colección de ejemplos para generar contenido HTML a partir de archivos Markdown."><meta property=twitter:image content=https://elartedelcodigo.com/static/assets/img/logo.png><meta property=twitter:card content=summary><link rel=icon type=image/png sizes=32x32 href=./static/assets/favicon_32x32.png><link rel=icon type=image/png sizes=192x192 href=./static/assets/favicon_192x192.png><link rel=canonical href=https://elartedelcodigo.com/markdown/guia-de-markdown><link rel=alternate hreflang=en href=https://elartedelcodigo.com/en/markdown/guia-de-markdown><link rel=alternate hreflang=es href=https://elartedelcodigo.com/markdown/guia-de-markdown><link rel=alternate hreflang=x-default href=https://elartedelcodigo.com/markdown/guia-de-markdown><script>!function(){const t=document.getElementsByTagName("html")[0],e=window.localStorage.getItem("theme");e&&t.setAttribute("data-theme",e);const n=window.localStorage.getItem("lang");n&&n!==t.getAttribute("lang")&&(location.href=document.querySelector(`link[hreflang="${n}"]`).href)}();</script><style>@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400&display=swap');</style><link rel="stylesheet" href="./static/resource-128e7230.css"></head><body><div class=_app-root><header class=_header><div class=_header-content><div class=app-header><ul class=left><li><a class="btn menu-item" href=./ ><span class="icon icon-dark icon-home-solid"></span> Inicio</a></li><li><a class="btn menu-item" href=./search><span class="icon icon-dark icon-bolt-solid"></span> Ver todos</a></li><li><a class="btn menu-item d-none d-xl-block" href=./bash>Bash</a></li><li><a class="btn menu-item d-none d-xl-block" href=./docker>Docker</a></li><li><a class="btn menu-item d-none d-xl-block" href=./git>Git</a></li><li><a class="btn menu-item d-none d-xl-block" href=./markdown>Markdown</a></li><li><a class="btn menu-item d-none d-xl-block" href=./nginx>Nginx</a></li><li><a class="btn menu-item d-none d-xl-block" href=./node>Node</a></li><li><a class="btn menu-item d-none d-xl-block" href=./postgres>Postgres</a></li><li><a class="btn menu-item d-none d-xl-block" href=./ssh>SSH</a></li><li><a class="btn menu-item d-none d-xl-block" href=./utilitarios>Utilitarios</a></li></ul><ul class=right><li class="d-none d-sm-flex align-items-center"><form id=search-form class=d-flex data-url=./search><span class="icon icon-dark icon-search-solid"></span><input id=search-form-q type=text placeholder=Buscar></form></li><li><div id=switch-theme-button class="btn menu-item" title="Cambiar tema"><span class="icon icon-dark icon-adjust-solid"></span></div></li><li><div id=switch-language-button class="btn menu-item" data-es-title="Muestra la versión en Inglés" data-en-title="Muestra la versión en Español">En</div></li></ul></div></div></header><article class=_body><div class=_body-content><div class=body-content><div class="container v2"><div class=row><div class="col-xl-2 d-none d-xl-block"><div class="sidenav-container sticky-top"><div id=sidenav><ul><li><a class=sidenav-item section-link=1-encabezados>1. Encabezados</a></li><li><a class=sidenav-item section-link=2-parrafos>2. Párrafos</a></li><li><a class=sidenav-item section-link=3-enfasis>3. Énfasis</a></li><li><a class=sidenav-item section-link=4-bloques-de-texto>4. Bloques de texto</a></li><li><a class=sidenav-item section-link=5-listas>5. Listas</a></li><li><a class=sidenav-item section-link=6-codigo-y-archivos>6. Código y archivos</a></li><li><a class=sidenav-item section-link=7-terminal-y-resultados>7. Terminal y resultados</a></li><li><a class=sidenav-item section-link=8-lineas-horizontales>8. Líneas horizontales</a></li><li><a class=sidenav-item section-link=9-enlaces>9. Enlaces</a></li><li><a class=sidenav-item section-link=10-imagenes>10. Imágenes</a></li><li><a class=sidenav-item section-link=11-tablas>11. Tablas</a></li><li><a class=sidenav-item section-link=referencias>Referencias</a></li></ul></div></div></div><div class=col-xl-8><div class="container py-md-5 py-sm-3 py-0"><div class=row><div class="col text-center"><p class="mt-3 mb-0"><a class=category-link href=./markdown title=Categoría>#markdown</a></p></div></div><div class=row><div id=mark class=col><div xmlns=http://www.w3.org/1999/xhtml><h1>Guía de Markdown</h1><p>Colección de ejemplos para generar contenido <a href=https://developer.mozilla.org/es/docs/Web/HTML title="Lenguaje de Marcado de Hipertextos">HTML</a> a partir de archivos <a href=https://markdown.es title="Herramienta de conversión de texto plano a HTML">Markdown</a>.</p><h2 id=1-encabezados class=section>1. Encabezados</h2><p>Crea jerarquías de títulos con el carácter <code>#</code>. Mientras más <code>#</code>, menor el nivel del encabezado.</p><p class=pre-title>example.md</p><pre class="language-md line-numbers" data-title=example.md><code># Encabezado de nivel 1
 
 ## Encabezado de nivel 2
 
@@ -31,8 +31,8 @@ JULIAN ZINI {.text-right}
 </code></pre><p class=text-right>"Solo es joven aquél que sigue aprendiendo."</p><p class=text-right>JULIAN ZINI</p><h2 id=3-enfasis class=section>3. Énfasis</h2><p>Combina asteriscos y tildes para aplicar negrita, cursiva, tachado o resaltar fragmentos de código en línea.</p><p class=pre-title>example.md</p><pre class="language-md line-numbers" data-title=example.md><code>Este es un **texto en negrita**.
 </code></pre><p>Este es un <strong>texto en negrita</strong>.</p><p class=pre-title>example.md</p><pre class="language-md line-numbers" data-title=example.md><code>Este es un _texto en cursiva_.
 </code></pre><p>Este es un <em>texto en cursiva</em>.</p><p class=pre-title>example.md</p><pre class="language-md line-numbers" data-title=example.md><code>Este es un texto **_muy importante_**.
-</code></pre><p>Este es un texto <strong><em>muy importante</em></strong>.</p><p class=pre-title>example.md</p><pre class="language-md line-numbers" data-title=example.md><code>Este es un ~~Texto subrayado~~.
-</code></pre><p>Este es un <s>Texto subrayado</s>.</p><p class=pre-title>example.md</p><pre class="language-md line-numbers" data-title=example.md><code>Este es un `fragmento de código`.
+</code></pre><p>Este es un texto <strong><em>muy importante</em></strong>.</p><p class=pre-title>example.md</p><pre class="language-md line-numbers" data-title=example.md><code>Este es un ~~texto tachado~~.
+</code></pre><p>Este es un <s>texto tachado</s>.</p><p class=pre-title>example.md</p><pre class="language-md line-numbers" data-title=example.md><code>Este es un `fragmento de código`.
 </code></pre><p>Este es un <code>fragmento de código</code>.</p><h2 id=4-bloques-de-texto class=section>4. Bloques de texto</h2><p>Utiliza el símbolo <code>&gt;</code> para crear citas y mensajes resaltados. Puedes anidar niveles o agregar listas dentro del bloque.</p><p class=pre-title>example.md</p><pre class="language-md line-numbers" data-title=example.md><code>&gt; Dorothy la siguió por muchas habitaciones preciosas de su castillo.
 </code></pre><blockquote><p>Dorothy la siguió por muchas habitaciones preciosas de su castillo.</p></blockquote><p class=pre-title>example.md</p><pre class="language-md line-numbers" data-title=example.md><code>&gt; Dorothy la siguió por muchas habitaciones preciosas de su castillo.
 &gt;
@@ -47,8 +47,8 @@ JULIAN ZINI {.text-right}
 &gt; - Los ingresos estaban fuera de la tabla.
 &gt; - Las ganancias fueron **_más altas_** que nunca.
 &gt;
-&gt; _Todo_ esta yendo **_según_** el **plan**.
-</code></pre><blockquote><h3>¡Los resultados trimestrales se ven geniales!</h3><ul><li>Los ingresos estaban fuera de la tabla.</li><li>Las ganancias fueron <strong><em>más altas</em></strong> que nunca.</li></ul><p><em>Todo</em> esta yendo <strong><em>según</em></strong> el <strong>plan</strong>.</p></blockquote><p class=pre-title>example.md</p><pre class="language-md line-numbers" data-title=example.md><code>&gt; Este es un `mensaje`.
+&gt; _Todo_ está yendo **_según_** el **plan**.
+</code></pre><blockquote><h3>¡Los resultados trimestrales se ven geniales!</h3><ul><li>Los ingresos estaban fuera de la tabla.</li><li>Las ganancias fueron <strong><em>más altas</em></strong> que nunca.</li></ul><p><em>Todo</em> está yendo <strong><em>según</em></strong> el <strong>plan</strong>.</p></blockquote><p class=pre-title>example.md</p><pre class="language-md line-numbers" data-title=example.md><code>&gt; Este es un `mensaje`.
 
 &gt; Este es un `mensaje` de éxito.
 &gt; {.text-success}
@@ -106,36 +106,35 @@ JULIAN ZINI {.text-right}
   &lt;head&gt;
     &lt;title&gt;Test&lt;/title&gt;
   &lt;/head&gt;
-</code></pre></li><li><p>Actualiza el título.</p></li></ol><p class=pre-title>example.md</p><pre class="language-md line-numbers" data-title=example.md><code>1.  Abre el archivo que contiene a la mascota de linux.
+</code></pre></li><li><p>Actualiza el título.</p></li></ol><p class=pre-title>example.md</p><pre class="language-md line-numbers" data-title=example.md><code>1.  Abre el archivo que contiene a la mascota de Linux.
 2.  Maravíllate con su belleza.
 
     ![Tux](https://alexquispe.github.io/static/tux.png)
 
 3.  Cierra el archivo.
-</code></pre><ol><li><p>Abre el archivo que contiene a la mascota de linux.</p></li><li><p>Maravíllate con su belleza.</p><p><img src=https://alexquispe.github.io/static/tux.png alt=Tux></p></li><li><p>Cierra el archivo.</p></li></ol><h2 id=6-codigo class=section>6. Código</h2><p class=pre-title>example.md</p><pre class="language-md line-numbers" data-title=example.md><code>Ejecuta el comando `cat /etc/os-release` para ver
-la versión del Sistema Operativo.
-</code></pre><p>Ejecuta el comando <code>cat /etc/os-release</code> para ver la versión del Sistema Operativo.</p><p class=pre-title>example.md</p><pre class="language-md line-numbers" data-title=example.md><code>```
+</code></pre><ol><li><p>Abre el archivo que contiene a la mascota de Linux.</p></li><li><p>Maravíllate con su belleza.</p><p><img src=https://alexquispe.github.io/static/tux.png alt=Tux></p></li><li><p>Cierra el archivo.</p></li></ol><h2 id=6-codigo-y-archivos class=section>6. Código y archivos</h2><p>Indica el lenguaje en la cerca para que el sitio aplique el resaltado correspondiente. Los atributos <code>.line-numbers</code>, <code>data-title</code> y <code>data-line</code> permiten mostrar números de línea, el nombre del archivo y resaltar líneas concretas.</p><p class=pre-title>example.md</p><pre class="language-md line-numbers" data-title=example.md><code>Ejecuta `node --version` para consultar la versión de Node.js.
+</code></pre><p>Ejecuta <code>node --version</code> para consultar la versión de Node.js.</p><p class=pre-title>example.md</p><pre class="language-md line-numbers" data-title=example.md><code>```
 app
   ├─ logs
-  │     ├─ info.log
-  │     ├─ warn.log
-  │     └─ error.log
+  │  ├─ info.log
+  │  ├─ warn.log
+  │  └─ error.log
   ├─ logger.js
   └─ index.js
 ```
 </code></pre><pre><code>app
   ├─ logs
-  │     ├─ info.log
-  │     ├─ warn.log
-  │     └─ error.log
+  │  ├─ info.log
+  │  ├─ warn.log
+  │  └─ error.log
   ├─ logger.js
   └─ index.js
 </code></pre><p class=pre-title>example.md</p><pre class="language-md line-numbers" data-title=example.md><code>```js
-setTimeout(function () {
+setTimeout(() =&gt; {
   console.log("Verás esto después de 1 segundo");
 }, 1000);
 ```
-</code></pre><pre class=language-js><code>setTimeout(function () {
+</code></pre><pre class=language-js><code>setTimeout(() =&gt; {
   console.log("Verás esto después de 1 segundo");
 }, 1000);
 </code></pre><p class=pre-title>example.md</p><pre class="language-md line-numbers" data-title=example.md><code>```js {.line-numbers data-title="vue-example.js" data-line="8-12,16"}
@@ -174,31 +173,132 @@ new Vue({
   render: (h) =&gt; h(App),
   i18n,
 }).$mount("#app");
-</code></pre><p class=pre-title>example.md</p><pre class="language-md line-numbers" data-title=example.md><code>El siguiente comando muestra la versión del Sistema Operativo:
+</code></pre><p class=pre-title>example.md</p><pre class="language-md line-numbers" data-title=example.md><code>```python {.line-numbers data-title="index.py"}
+def saludar(nombre):
+    return f"Hola, {nombre}!"
+
+print(saludar("Ada"))
+```
+</code></pre><p class=pre-title>index.py</p><pre class="language-python line-numbers" data-title=index.py><code>def saludar(nombre):
+    return f"Hola, {nombre}!"
+
+print(saludar("Ada"))
+</code></pre><p class=pre-title>example.md</p><pre class="language-md line-numbers" data-title=example.md><code>```dockerfile {.line-numbers data-title="Dockerfile"}
+FROM node:22-alpine
+WORKDIR /app
+COPY package*.json ./
+RUN npm ci --omit=dev
+COPY . .
+CMD ["node", "index.js"]
+```
+</code></pre><p class=pre-title>Dockerfile</p><pre class="language-dockerfile line-numbers" data-title=Dockerfile><code>FROM node:22-alpine
+WORKDIR /app
+COPY package*.json ./
+RUN npm ci --omit=dev
+COPY . .
+CMD ["node", "index.js"]
+</code></pre><p class=pre-title>example.md</p><pre class="language-md line-numbers" data-title=example.md><code>```html {.line-numbers data-title="index.html" data-line="3-5,7,9"}
+&lt;!doctype html&gt;
+&lt;html lang="es"&gt;
+  &lt;head&gt;
+    &lt;title&gt;Mi sitio&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Hola, mundo&lt;/h1&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+```
+</code></pre><p class=pre-title>index.html</p><pre class="language-html line-numbers" data-title=index.html data-line=3-5,7,9><code>&lt;!doctype html&gt;
+&lt;html lang="es"&gt;
+  &lt;head&gt;
+    &lt;title&gt;Mi sitio&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Hola, mundo&lt;/h1&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre><p class=pre-title>example.md</p><pre class="language-md line-numbers" data-title=example.md><code>```json {.line-numbers data-title="package.json" data-line="2-4"}
+{
+  "name": "mi-aplicacion",
+  "version": "1.0.0",
+  "scripts": { "start": "node index.js" }
+}
+```
+</code></pre><p class=pre-title>package.json</p><pre class="language-json line-numbers" data-title=package.json data-line=2-4><code>{
+  "name": "mi-aplicacion",
+  "version": "1.0.0",
+  "scripts": { "start": "node index.js" }
+}
+</code></pre><p class=pre-title>example.md</p><pre class="language-md line-numbers" data-title=example.md><code>```sql {.line-numbers data-title="schema.sql" data-line="1-4"}
+CREATE TABLE tutorial (
+  id INTEGER PRIMARY KEY,
+  titulo TEXT NOT NULL
+);
+```
+</code></pre><p class=pre-title>schema.sql</p><pre class="language-sql line-numbers" data-title=schema.sql data-line=1-4><code>CREATE TABLE tutorial (
+  id INTEGER PRIMARY KEY,
+  titulo TEXT NOT NULL
+);
+</code></pre><h2 id=7-terminal-y-resultados class=section>7. Terminal y resultados</h2><p>Separa los comandos de la salida que producen. El sitio reconoce variantes para una terminal normal, permisos de administrador y sesiones interactivas de Python y PostgreSQL.</p><p class=pre-title>example.md</p><pre class="language-md line-numbers" data-title=example.md><code>Ejecuta este comando para consultar la versión de Node.js:
 
 ```bash {.cmd}
-cat /etc/os-release
+node --version
 ```
 
 ```{.cmd-output}
-PRETTY_NAME="Debian GNU/Linux 10 (buster)"
-NAME="Debian GNU/Linux"
-VERSION_ID="10"
-VERSION="10 (buster)"
-...
+v22.0.0
 ```
-</code></pre><p>El siguiente comando muestra la versión del Sistema Operativo:</p><pre class="language-bash cmd"><code>cat /etc/os-release
-</code></pre><pre class=cmd-output><code>PRETTY_NAME="Debian GNU/Linux 10 (buster)"
-NAME="Debian GNU/Linux"
-VERSION_ID="10"
-VERSION="10 (buster)"
-...
-</code></pre><h2 id=7-lineas-horizontales class=section>7. Líneas horizontales</h2><p class=pre-title>example.md</p><pre class="language-md line-numbers" data-title=example.md><code>Intenta colocar un espacio en blanco antes...
+</code></pre><p>Ejecuta este comando para consultar la versión de Node.js:</p><pre class="language-bash cmd"><code>node --version
+</code></pre><pre class=cmd-output><code>v22.0.0
+</code></pre><p class=pre-title>example.md</p><pre class="language-md line-numbers" data-title=example.md><code>```bash {.cmd-user}
+whoami
+```
+
+```bash {.cmd-root}
+systemctl status nginx
+```
+</code></pre><pre class="language-bash cmd-user"><code>whoami
+</code></pre><pre class="language-bash cmd-root"><code>systemctl status nginx
+</code></pre><p class=pre-title>example.md</p><pre class="language-md line-numbers" data-title=example.md><code>```python {.cmd-py}
+print("Hola desde Python")
+```
+</code></pre><pre class="language-python cmd-py"><code>print("Hola desde Python")
+</code></pre><p class=pre-title>example.md</p><pre class="language-md line-numbers" data-title=example.md><code>```sql {.cmd-pg}
+SELECT current_database();
+```
+
+```{.cmd-output}
+ current_database
+------------------
+ tutorial
+(1 row)
+```
+</code></pre><pre class="language-sql cmd-pg"><code>SELECT current_database();
+</code></pre><pre class=cmd-output><code> current_database
+------------------
+ tutorial
+(1 row)
+</code></pre><p class=pre-title>example.md</p><pre class="language-md line-numbers" data-title=example.md><code>```sql {.cmd-pg-test}
+SELECT COUNT(*) FROM tutorial;
+```
+
+```{.cmd-output}
+ count
+-------
+     3
+(1 row)
+```
+</code></pre><pre class="language-sql cmd-pg-test"><code>SELECT COUNT(*) FROM tutorial;
+</code></pre><pre class=cmd-output><code> count
+-------
+     3
+(1 row)
+</code></pre><h2 id=8-lineas-horizontales class=section>8. Líneas horizontales</h2><p class=pre-title>example.md</p><pre class="language-md line-numbers" data-title=example.md><code>Intenta colocar un espacio en blanco antes...
 
 ---
 
 ...y después de la línea horizontal.
-</code></pre><p>Intenta colocar un espacio en blanco antes...</p><hr><p>...y después de la línea horizontal.</p><h2 id=8-enlaces class=section>8. Enlaces</h2><p class=pre-title>example.md</p><pre class="language-md line-numbers" data-title=example.md><code>Mi motor de búsqueda favorito es
+</code></pre><p>Intenta colocar un espacio en blanco antes...</p><hr><p>...y después de la línea horizontal.</p><h2 id=9-enlaces class=section>9. Enlaces</h2><p class=pre-title>example.md</p><pre class="language-md line-numbers" data-title=example.md><code>Mi motor de búsqueda favorito es
 [Duck Duck Go](https://duckduckgo.com).
 </code></pre><p>Mi motor de búsqueda favorito es <a href=https://duckduckgo.com>Duck Duck Go</a>.</p><p class=pre-title>example.md</p><pre class="language-md line-numbers" data-title=example.md><code>Mi motor de búsqueda favorito es
 [Duck Duck Go](https://duckduckgo.com "El mejor motor de búsqueda").
@@ -217,10 +317,10 @@ y eso significa comodidad.”_ {.text-justify}
 _― J.R.R. Tolkien, The Hobbit, or There and Back Again_ {.text-right}
 
 [1]: https://es.wikipedia.org/wiki/Hobbits "Estilo de vida Hobbit"
-</code></pre><p class=text-justify><em>“En un agujero en el suelo, vivía un hobbit. No un agujero húmedo, sucio, repugnante, con restos de gusanos y olor a fango, ni tampoco un agujero seco, desnudo y arenoso, sin nada en que sentarse o que comer: era un <a href=https://es.wikipedia.org/wiki/Hobbits title="Estilo de vida Hobbit">agujero-hobbit</a>, y eso significa comodidad.”</em></p><p class=text-right><em>― J.R.R. Tolkien, The Hobbit, or There and Back Again</em></p><h2 id=9-imagenes class=section>9. Imágenes</h2><p class=pre-title>example.md</p><pre class="language-md line-numbers" data-title=example.md><code>![Tux](https://alexquispe.github.io/static/tux.png "Tux, la mascota de linux")
-</code></pre><p><img src=https://alexquispe.github.io/static/tux.png alt=Tux title="Tux, la mascota de linux"></p><p class=pre-title>example.md</p><pre class="language-md line-numbers" data-title=example.md><code>[![Tux](https://alexquispe.github.io/static/tux.png "Tux, la mascota de linux")](https://alexquispe.github.io/static/tux.png)
-</code></pre><p><a href=https://alexquispe.github.io/static/tux.png><img src=https://alexquispe.github.io/static/tux.png alt=Tux title="Tux, la mascota de linux"></a></p><p class=pre-title>example.md</p><pre class="language-md line-numbers" data-title=example.md><code>![Tux](https://alexquispe.github.io/static/linux.png){.w-25} {.text-center}
-</code></pre><p class=text-center><img src=https://alexquispe.github.io/static/linux.png alt=Tux class=w-25></p><h2 id=10-tablas class=section>10. Tablas</h2><p class=pre-title>example.md</p><pre class="language-md line-numbers" data-title=example.md><code>| Sintaxis   | Descripción |
+</code></pre><p class=text-justify><em>“En un agujero en el suelo, vivía un hobbit. No un agujero húmedo, sucio, repugnante, con restos de gusanos y olor a fango, ni tampoco un agujero seco, desnudo y arenoso, sin nada en que sentarse o que comer: era un <a href=https://es.wikipedia.org/wiki/Hobbits title="Estilo de vida Hobbit">agujero-hobbit</a>, y eso significa comodidad.”</em></p><p class=text-right><em>― J.R.R. Tolkien, The Hobbit, or There and Back Again</em></p><h2 id=10-imagenes class=section>10. Imágenes</h2><p class=pre-title>example.md</p><pre class="language-md line-numbers" data-title=example.md><code>![Tux](https://alexquispe.github.io/static/tux.png "Tux, la mascota de Linux")
+</code></pre><p><img src=https://alexquispe.github.io/static/tux.png alt=Tux title="Tux, la mascota de Linux"></p><p class=pre-title>example.md</p><pre class="language-md line-numbers" data-title=example.md><code>[![Tux](https://alexquispe.github.io/static/tux.png "Tux, la mascota de Linux")](https://alexquispe.github.io/static/tux.png)
+</code></pre><p><a href=https://alexquispe.github.io/static/tux.png><img src=https://alexquispe.github.io/static/tux.png alt=Tux title="Tux, la mascota de Linux"></a></p><p class=pre-title>example.md</p><pre class="language-md line-numbers" data-title=example.md><code>![Tux](https://alexquispe.github.io/static/linux.png){.w-25} {.text-center}
+</code></pre><p class=text-center><img src=https://alexquispe.github.io/static/linux.png alt=Tux class=w-25></p><h2 id=11-tablas class=section>11. Tablas</h2><p class=pre-title>example.md</p><pre class="language-md line-numbers" data-title=example.md><code>| Sintaxis   | Descripción |
 | ---------- | ----------- |
 | Encabezado | Título      |
 | Párrafo    | Texto       |
@@ -235,5 +335,5 @@ _― J.R.R. Tolkien, The Hobbit, or There and Back Again_ {.text-right}
 | `-d`     | Ejecuta el contenedor en segundo plano. |
 | `-p`     | Expone un puerto. `host:container`      |
 | `-it`    | Crea un shell bash interactivo.         |
-</code></pre><div class=table-container><table><thead><tr><th>Opción</th><th>Descripción</th></tr></thead><tbody><tr><td><code>--name</code></td><td>Nombre del contenedor.</td></tr><tr><td><code>-e</code></td><td>Describe las variables de entorno.</td></tr><tr><td><code>-d</code></td><td>Ejecuta el contenedor en segundo plano.</td></tr><tr><td><code>-p</code></td><td>Expone un puerto. <code>host:container</code></td></tr><tr><td><code>-it</code></td><td>Crea un shell bash interactivo.</td></tr></tbody></table></div><h2 id=referencias class=section>Referencias</h2><ul><li><a href=https://www.markdownguide.org/basic-syntax>Markdown Guide - Basic Syntax</a></li></ul></div></div></div><div class="row pt-5"><div class="col-12 py-5 text-right"><div class=tags-text><p><span class="icon icon-tags-solid" title=Etiquetas></span>&nbsp; <a href=./search?q=guide>guide</a>&nbsp;<a href=./search?q=md>md</a>&nbsp;</p></div></div><div class="col-12 py-1 text-left"><div class=published-text><p>Publicado: 2 de mayo de 2020</p></div></div></div></div></div></div></div><div id=to-top><div class=to-top-icon></div></div></div></div></article><footer class=_footer><div class=_footer-content><div class=app-footer><div class="container h-100"><div class="row d-flex align-items-center h-100"><div class="col text-center">El código se encuentra disponible bajo la licencia <a href=https://oss.ninja/mit target=_blank title="Licencia de software">MIT</a>, a menos que se indique lo contrario. <br><div class=copy>© 2026 <a href=https://github.com/ElArteDelCodigo title=https://github.com/ElArteDelCodigo>El arte del código</a> - Desarrollado con <a href=https://markojs.com target=_blank title=https://markojs.com>Marko JS</a></div><a href=https://elartedelcodigo.com/terms title=terms>Condiciones del Servicio</a> - <a href=https://elartedelcodigo.com/privacy title=privacy>Política de Privacidad</a></div></div></div></div></div></footer></div><script src="./static/resource-663a8f79.js"></script>
+</code></pre><div class=table-container><table><thead><tr><th>Opción</th><th>Descripción</th></tr></thead><tbody><tr><td><code>--name</code></td><td>Nombre del contenedor.</td></tr><tr><td><code>-e</code></td><td>Describe las variables de entorno.</td></tr><tr><td><code>-d</code></td><td>Ejecuta el contenedor en segundo plano.</td></tr><tr><td><code>-p</code></td><td>Expone un puerto. <code>host:container</code></td></tr><tr><td><code>-it</code></td><td>Crea un shell bash interactivo.</td></tr></tbody></table></div><h2 id=referencias class=section>Referencias</h2><ul><li><a href=https://www.markdownguide.org/basic-syntax>Markdown Guide - Basic Syntax</a></li></ul></div></div></div><div class="row pt-5"><div class="col-12 py-5 text-right"><div class=tags-text><p><span class="icon icon-tags-solid" title=Etiquetas></span>&nbsp; <a href=./search?q=guide>guide</a>&nbsp;<a href=./search?q=md>md</a>&nbsp;</p></div></div><div class="col-12 py-1 text-left"><div class=published-text><p>Publicado: 28 de septiembre de 2026</p></div></div></div></div></div></div></div><div id=to-top><div class=to-top-icon></div></div></div></div></article><footer class=_footer><div class=_footer-content><div class=app-footer><div class="container h-100"><div class="row d-flex align-items-center h-100"><div class="col text-center">El código se encuentra disponible bajo la licencia <a href=https://oss.ninja/mit target=_blank title="Licencia de software">MIT</a>, a menos que se indique lo contrario. <br><div class=copy>© 2026 <a href=https://github.com/ElArteDelCodigo title=https://github.com/ElArteDelCodigo>El arte del código</a> - Desarrollado con <a href=https://markojs.com target=_blank title=https://markojs.com>Marko JS</a></div><a href=https://elartedelcodigo.com/terms title=terms>Condiciones del Servicio</a> - <a href=https://elartedelcodigo.com/privacy title=privacy>Política de Privacidad</a></div></div></div></div></div></footer></div><script src="./static/resource-dc132516.js"></script>
 <script>$_mod.ready();</script></body></html>
